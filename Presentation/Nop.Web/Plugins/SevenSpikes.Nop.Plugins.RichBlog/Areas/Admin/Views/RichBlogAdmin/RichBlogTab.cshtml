@@ -1,0 +1,78 @@
+﻿@{
+    Layout = "";
+
+    <link href="@Url.Content("~/lib/fineuploader/fine-uploader.min.css")" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="@Url.Content("~/lib/fineuploader/jquery.fine-uploader.min.js")"></script>
+}
+
+@model RichBlogPostModel
+
+<div class="content" id="rich-blog-inputs">
+    <div class="form-horizontal">
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <nop-label asp-for="HomePagePictureId" />
+                        </div>
+                        <div class="col-md-9">
+                            <nop-editor asp-for="HomePagePictureId" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <nop-label asp-for="PictureId" />
+                        </div>
+                        <div class="col-md-9">
+                            <nop-editor asp-for="PictureId" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.pull-right > .btn.bg-blue').click(function () {
+
+            var buttonName = $(this).attr('name');
+
+            if (buttonName == "save" || buttonName == "save-continue") {
+                sendRichBlogPostData();
+            }
+        });
+    });
+
+    function sendRichBlogPostData() {
+
+        var data = {
+            'BlogPostId': $('input#Id').val(),
+            'HomePagePictureId': $('#HomePagePictureId').val(),
+            'PictureId': $('#PictureId').val()
+        };
+
+        $('#rich-blog-inputs').remove();
+
+        var headers = {};
+
+        addAntiForgeryToken(headers);
+
+        $.ajax({
+            async: false,
+            cache: false,
+            type: "POST",
+            data: data,
+            headers: headers,
+            url: "@Html.Raw(Url.Action("RichBlogTab", "RichBlogAdmin"))"
+        }).done(function () {
+            return;
+        }).fail(function () {
+            alert("Updating Rich Blog failed.");
+        }).always(function () {
+            return;
+        });
+    }
+</script>

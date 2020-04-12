@@ -1,0 +1,11 @@
+﻿{
+  "Group": "7Spikes",
+  "FriendlyName": "Nop Facebook Shop",
+  "SystemName": "SevenSpikes.Nop.Plugins.FacebookShop",
+  "Version": "4.1",
+  "SupportedVersions": [ "4.10" ],
+  "Author": "Seven Spikes Ltd",
+  "DisplayOrder": 1,
+  "FileName": "SevenSpikes.Nop.Plugins.FacebookShop.dll",
+  "Description": "This plugin allows your customers browse your catalog and search right within Facebook."
+}

@@ -1,0 +1,127 @@
+/*
+* Copyright 2012 Seven Spikes Ltd. All rights reserved. (http://www.nop-templates.com)
+* http://www.nop-templates.com/t/licensinginfo
+*/
+
+* {
+	direction: rtl;
+}
+
+.rich-blog-homepage .view-all {
+	right: 50%;
+	left: auto;
+	-webkit-transform: translateX(50%);
+	-ms-transform: translateX(50%);
+	transform: translateX(50%);
+}
+.rich-blog-homepage .view-all:before {
+	margin-left: 5px;
+	margin-right: 0;
+}
+.blog-search-box span.search-box-text {
+	float: right;
+}
+.blog-search-box input.search-box-text {
+	float: right;
+	border-left: 0;
+	border-right: 0;
+}
+.blog-search-box .instant-search-busy {
+	background: #fff  url('images/ajax-loader-small.gif') left center no-repeat !important;
+}
+.blog-search-box .search-box-button {
+	float: right;
+	border-right: 0;
+	border-left: 0;
+}
+.post-navigation .prev {
+	float: right;
+}
+.post-navigation .next {
+	float: left;
+}
+.blog-search-results .page-title {
+	text-align: right;
+}
+
+@media all and (min-width: 481px) {
+	.rich-blog-homepage .post-details {
+		max-width: 80%;
+	}
+	.blog-search-box span.search-box-text {
+		width: 81%;
+	}
+}
+@media all and (min-width: 769px) {
+
+	.blog-page .post-title {
+		float: right;
+	}
+	.blog-page .post-date {
+		float: left;
+	}
+	.post-relations {
+		margin: 0 20px 0 0;
+	}
+	.post-footer {
+		float: left;
+	}
+	.blog-page .post-relations {
+		float: right;
+	}
+	.blogpost-page .category-list,
+    .blogpost-page .related-posts-list {
+		margin: 0 0 20px 20px;
+	}
+	.blog-page .post-actions .read-more {
+		float: right;
+	}
+	.blog-page .post-actions .share-post {
+		float: left;
+	}
+	.blogpost-page .post-actions {
+		float: left;
+	}
+}
+@media all and (min-width: 1025px) {
+	.two-colums-wrapper .rich-blog-homepage {
+		float: right;
+	}
+	.rich-blog-homepage .blog-post {
+		float: right;
+		margin: 0 2% 30px 0;
+	}
+	.rich-blog-homepage .blog-post:nth-child(3n+1) {
+		clear: both;
+		margin-right: 0;
+		margin-left: 0;
+	}
+	.blogpost-page .page-title {
+		padding-left: 50%;
+		padding-right: 0;
+	}
+	.post-navigation {
+		left: 0;
+		right: auto;
+		text-align: left;
+	}
+	.post-navigation a.prev:before {
+		right: 10px;
+		left: auto;
+	}
+	.post-navigation a.next:after {
+		left: 10px;
+		right: auto;
+	}
+	.post-navigation .prev {
+		padding: 11px 40px 8px 12px;
+		text-align: right;
+	}
+	.post-navigation .next {
+		padding: 11px 12px 8px 40px;
+		text-align: left;
+	}
+	.blog-search-box input.search-box-text {
+		margin: 0 0 0 -1px;
+	}
+}

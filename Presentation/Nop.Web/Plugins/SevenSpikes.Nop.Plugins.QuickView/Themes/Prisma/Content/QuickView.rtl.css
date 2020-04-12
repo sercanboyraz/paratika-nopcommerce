@@ -1,0 +1,172 @@
+﻿/*
+* Copyright 2012 Seven Spikes Ltd. All rights reserved. (http://www.nop-templates.com)
+* http://www.nop-templates.com/t/licensinginfo
+*/
+
+* {
+	direction: rtl;
+}
+.quickViewData {
+	display: none;
+}
+
+/* TRIGGER BUTTON */
+
+.product-list .quick-view-button + button:before {
+	right: 0;
+	left: auto;
+}
+.item-type-1 .product-grid .quick-view-button a:before,
+.bestsellers.product-grid .item-box .quick-view-button a:before {
+	right: 0;
+	left: auto;
+}
+.item-box .quick-view-button a:after {
+	right: 50%;
+	left: auto;
+	-webkit-transform: translate(50%, -50%);
+	-ms-transform: translate(50%, -50%);
+	transform: translate(50%, -50%);
+}
+.k-overlay {
+	right: 0;
+	left: auto;
+}
+.quickView .k-loading-image {
+	right: 50%;
+	left: auto;
+	margin: -20px -30px 0 0;
+
+}
+.quickView {
+	right: 50% !important;
+	left: auto;
+	margin: 0 -400px 0 0;
+}
+.quickView .cloudzoom-zoom-inside {
+    bottom: 0;
+}
+.quickView .k-window-titlebar .k-window-actions {
+	left: 15px;
+	right: auto;
+}
+.quickView .k-window-titlebar .k-window-actions a:after {
+	right: 10px;
+	left: auto;
+}
+.quickView .gallery {
+	float: right;
+	padding: 20px 20px 20px 10px;
+}
+.quickView .thumbnails a {
+	float: right;
+	margin: 0 2% 2% 0;
+}
+.quickView .thumbnails a:nth-child(3n+1) {
+	margin-right: 0;
+	margin-left: 0;
+}
+.quickView .thumbnails a img {
+	left: 0;
+	right: 0;
+}
+.quickView .links-panel {
+	float: left;
+}
+.quickView .links-panel a:after {
+	margin-right: 10px;
+	margin-left: 0;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.quickView .links-panel a:hover:after {
+	-webkit-transform: translateX(-5px) rotate(180deg);
+	transform: translateX(-5px) rotate(180deg);
+}
+.quickView .overview {
+	float: left;
+	padding: 20px 10px 20px 20px;
+}
+.quickView .ui-accordion-header {
+	text-align: right;
+}
+.quickView .ui-accordion-header span {
+
+	left: 10px;
+	right: auto;
+}
+.quickView .ui-accordion-header span:after {
+	right: 10px;
+	left: auto;
+}
+.quickView .overview .left {
+	text-align: right;
+}
+.quickView .overview .left .label + .value {
+	text-align: right;
+}
+.quickView .attributes dt {
+	float: right;
+	padding: 10px 10px 10px 0;
+}
+.quickView .attributes dd {
+	float: right;
+}
+.quickView .overview .add-to-wishlist,
+.quickView .overview .compare-products {
+	margin: 6px 0 6px 4px;
+}
+.quickView .overview .add-to-wishlist-button,
+.quickView .overview .add-to-compare-list-button {
+	padding: 0 50px 0 10px;
+}
+.quickView .overview .add-to-wishlist:after {
+	right: 0;
+	left: auto;
+}
+.quickView .overview .attributes select {
+	max-width: 350px;
+}
+.quickView .attributes .option-list {
+	text-align: right;
+}
+.quickView .overview .purchase-area .prices {
+	text-align: right;
+}
+.quickView .add-to-cart-panel .qty-wrapper {
+	float: right;
+}
+
+
+/* PRODUCT GRIDS */
+
+
+.quickView .product-content {
+	overflow: hidden;
+}
+.quickView .item-box {
+	width: 18%;
+}
+
+/* PRODUCT VARIANTS */
+
+.quickView .product-variant {
+	float: right;
+	margin: 0 2% 0 0;
+}
+.quickView .product-variant:first-child {
+	margin-right: 0;
+	margin-left: 0;
+}
+.quickView .product-variant:hover .moreInfoHover {
+	right: 101%;
+	left: auto;
+}
+.quickView .product-variant:hover .variant-info {
+	right: 0;
+	left: auto;
+}
+.quickView .variant-info .variant-name a {
+	text-align: right;
+}

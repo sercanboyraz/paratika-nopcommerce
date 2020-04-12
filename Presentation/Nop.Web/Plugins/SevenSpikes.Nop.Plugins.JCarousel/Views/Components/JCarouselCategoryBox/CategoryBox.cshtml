@@ -1,0 +1,31 @@
+﻿@model CategoryModel.SubCategoryModel
+
+@{
+    string controllerName = Url.ActionContext.RouteData.Values["controller"].ToString();
+    string actionName = Url.ActionContext.RouteData.Values["action"].ToString();
+    var isHomePage = controllerName.Equals("home", StringComparison.InvariantCultureIgnoreCase) &&
+                     actionName.Equals("index", StringComparison.InvariantCultureIgnoreCase);
+
+    var categoryItemClass = string.Empty;
+    if (isHomePage)
+    {
+        categoryItemClass = "category-item";
+    }
+    else
+    {
+        categoryItemClass = "sub-category-item";
+    }
+}
+
+<div class="@categoryItemClass">
+    <h2 class="title">
+        <a href="@Url.RouteUrl("Category", new { SeName = Model.SeName })" title="@Model.PictureModel.Title">
+            @Model.Name
+        </a>
+    </h2>
+    <div class="picture">
+        <a href="@Url.RouteUrl("Category", new { SeName = Model.SeName })" title="@Model.PictureModel.Title">
+            <img alt="@Model.PictureModel.AlternateText" src="@Model.PictureModel.ImageUrl" title="@Model.PictureModel.Title" />
+        </a>
+    </div>
+</div>

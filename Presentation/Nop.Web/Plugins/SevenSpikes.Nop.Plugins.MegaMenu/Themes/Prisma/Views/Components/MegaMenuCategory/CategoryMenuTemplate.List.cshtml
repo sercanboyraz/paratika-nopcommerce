@@ -1,0 +1,42 @@
+﻿@using SevenSpikes.Nop.Plugins.MegaMenu.Models
+
+@model MenuItemCategoryModel
+
+@{
+    var areCategoriesInASingleItem = Model.Item.EntityId == 0;
+    var hasSubCategories = Model.Categories.Count > 0;
+    var hasSublistClass = hasSubCategories ? "has-sublist" : string.Empty;
+    var withSubcategoriesClass = hasSubCategories ? "with-subcategories" : string.Empty;
+}
+
+<li class="@hasSublistClass @Model.Item.CssClass">
+
+    @if (areCategoriesInASingleItem)
+    {
+    <span class="@withSubcategoriesClass single-item-categories labelfornextplusbutton">@Model.Item.Title</span>
+    }
+    else
+    {
+    <a class="@withSubcategoriesClass" href="@Model.Item.Url"><span>@Model.Item.Title</span></a>
+    }
+
+    @if (hasSubCategories)
+    {
+    <div class="plus-button"></div>
+    <div class="sublist-wrap">
+        <div class="navigation-wrapper">
+            <div class="close-menu">
+                <span>@T("SevenSpikes.Themes.Common.CloseMenu")</span>
+            </div>
+            <div class="back-button">
+                <span>@T("SevenSpikes.MegaMenu.ResponsiveBackButton")</span>
+            </div>
+        </div>
+        <ul class="sublist">
+            @await Component.InvokeAsync("MegaMenuListSubCategories", new { subCategories = Model.Categories })
+        </ul>
+    </div>
+    }
+
+</li>
+

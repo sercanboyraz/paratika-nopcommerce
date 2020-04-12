@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SupportedWidgetZones>
+  <WidgetZone>prisma_theme_logo</WidgetZone>
+  <WidgetZone>prisma_itembox_subcategories</WidgetZone>
+  <WidgetZone>head_html_tag_after_css_files_prisma</WidgetZone>
+  <WidgetZone>prisma_color_squares</WidgetZone>
+</SupportedWidgetZones>

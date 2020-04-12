@@ -1,0 +1,41 @@
+﻿@using Nop.Core
+
+@inject IWorkContext workContext
+@{
+    var supportRtl = workContext.WorkingLanguage.Rtl;
+
+
+    var userAgent = Url.ActionContext.HttpContext.Request.Headers["User-Agent"];
+    if (!string.IsNullOrEmpty(userAgent) && userAgent.ToString().ToLower().IndexOf("MSIE 9.0", StringComparison.InvariantCultureIgnoreCase) > 0)
+    {
+        Html.AppendCssFileParts("~/Themes/Prisma/Content/css/ie9-fix.css");
+    }
+
+    Html.AppendCssFileParts("~/Plugins/SevenSpikes.Core/Styles/perfect-scrollbar.min.css");
+
+    if (supportRtl)
+    {
+        Html.AppendCssFileParts("~/Themes/Prisma/Content/CSS/1280.rtl.css");
+        Html.AppendCssFileParts("~/Themes/Prisma/Content/CSS/1024.rtl.css");
+        Html.AppendCssFileParts("~/Themes/Prisma/Content/CSS/768.rtl.css");
+        Html.AppendCssFileParts("~/Themes/Prisma/Content/CSS/480.rtl.css");
+        Html.AppendCssFileParts("~/Themes/Prisma/Content/CSS/mobile.rtl.css");
+        Html.AppendCssFileParts("~/Themes/Prisma/Content/CSS/styles.rtl.css");
+    }
+    else
+    {
+        Html.AppendCssFileParts("~/Themes/Prisma/Content/CSS/1280.css");
+        Html.AppendCssFileParts("~/Themes/Prisma/Content/CSS/1024.css");
+        Html.AppendCssFileParts("~/Themes/Prisma/Content/CSS/768.css");
+        Html.AppendCssFileParts("~/Themes/Prisma/Content/CSS/480.css");
+        Html.AppendCssFileParts("~/Themes/Prisma/Content/CSS/mobile.css");
+        Html.AppendCssFileParts("~/Themes/Prisma/Content/CSS/styles.css");
+    }
+
+    Html.AddScriptParts(ResourceLocation.Footer, "~/Plugins/SevenSpikes.Core/Scripts/footable.min.js");
+    Html.AddScriptParts(ResourceLocation.Footer, "~/Plugins/SevenSpikes.Core/Scripts/perfect-scrollbar.min.js");
+    Html.AddScriptParts(ResourceLocation.Footer, "~/Plugins/SevenSpikes.Core/Scripts/sevenspikes.core.min.js");
+    Html.AddScriptParts(ResourceLocation.Footer, "~/Plugins/SevenSpikes.Core/Scripts/sevenspikes.theme.min.js");
+
+    Html.AddScriptParts(ResourceLocation.Footer, "~/Themes/Prisma/Content/scripts/prisma.js");
+}

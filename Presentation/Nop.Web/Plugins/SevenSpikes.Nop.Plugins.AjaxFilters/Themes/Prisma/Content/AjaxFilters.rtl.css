@@ -1,0 +1,128 @@
+﻿/*
+* Copyright 2015 Seven Spikes Ltd. All rights reserved. (http://www.nop-templates.com)
+* http://www.nop-templates.com/t/licensinginfo
+*/
+
+* {
+	direction: rtl;
+}
+
+.clearFilterOptionsAll {
+	float: left;
+}
+.filter-block .title a:after {
+	left: 15px;
+    right: auto;
+	-webkit-transform: translateY(-50%) rotate(180deg);
+	-ms-transform: translateY(-50%) rotate(180deg);
+	transform: translateY(-50%) rotate(180deg);
+}
+.filter-block a.toggleControl {
+	padding: 15px 20px 15px 45px;
+	text-align: right;
+}
+.filter-block a.toggleControl.closed:after {
+}
+.filter-block a.clearFilterOptions,
+.filter-block a.clearPriceRangeFilter {
+	left: 50px;
+    right: auto;
+}
+.filter-block a.clearFilterOptions:after,
+.filter-block a.clearPriceRangeFilter:after {
+	left: 0;
+}
+.selected-options-list > li {
+	text-align: right;
+}
+.selected-options-list > li span {
+	float: right;
+	margin: 0 0 0 10px;
+	padding: 5px 5px 5px 20px;
+}
+.selected-options-list > li span:after {
+	left: 5px;
+    right: auto;
+}
+.priceRangeMinPanel,
+.specification-min-panel {
+	float: right;
+}
+.priceRangeMaxPanel,
+.specification-max-panel {
+	float: left;
+}
+.ui-slider-handle {
+	margin-right: -8px;
+}
+.ui-slider-handle:after {
+	right: 50%;
+    left: auto;
+	-webkit-transform: translate(50%, -50%);
+	-ms-transform: translate(50%, -50%);
+	transform: translate(50%, -50%);
+}
+.currentMinPrice, .current-min-value {
+	float: right;
+}
+.currentMaxPrice, .current-max-value {
+	float: left;
+}
+.filtersGroupPanel .checkbox-list label {
+	padding: 12px 32px 12px 10px;
+	text-align: right;
+}
+.colorOptions .color {
+	left: 4px;
+	right: auto;
+}
+.filtersDropDownPanel select {
+	background-position: 6% center;
+}
+.productPanelAjaxBusy {
+	right: 0;
+}
+.productPanelAjaxBusy::after {
+    right: 50%;
+    margin: -20px -30px 0 0;
+}
+.k-overlay {
+	right: 0;
+}
+.ajaxFilters .k-window-actions .k-icon {
+	left: 0;
+    right: auto;
+}
+.ajaxFilters .k-window-actions .k-icon:after {
+	right: 50%;
+	-webkit-transform: translate(50%,-50%);
+	-ms-transform: translate(50%,-50%);
+	transform: translate(50%,-50%);
+}
+
+@media all and (max-width: 1024px) {
+	.close-btn {
+		float: left;
+	}
+	.close-btn:after {
+		right: 9px;
+	}
+	.nopAjaxFilters7Spikes {
+		right: 0;
+	}
+	.nopAjaxFilters7Spikes {
+		-webkit-transform: translate(320px);
+		-ms-transform: translate(320px);
+		transform: translate(320px);
+	}
+	.nopAjaxFilters7Spikes.opened {
+		-webkit-transform: translate(0);
+		-ms-transform: translate(0);
+		transform: translate(0);
+	}
+}
+@media all and (min-width: 1025px) {
+	.filtersGroupPanel li > a {
+		padding: 10px 38px 10px 10px;
+	}
+}

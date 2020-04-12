@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+  <Setting Name="prismathemesettings.preset">
+    <Value>57b568</Value>
+  </Setting>
+  <Setting Name="prismathemesettings.defaultpreset">
+    <Value>57b568</Value>
+  </Setting>
+  <Setting Name="prismathemesettings.itemboxtype">
+    <Value>item-type-1</Value>
+  </Setting> 
+  <Setting Name="prismathemesettings.categorygriditemsnumber">
+    <Value>four-per-row</Value>
+  </Setting> 
+  <Setting Name="prismathemesettings.fontfamily">
+    <Value>comfortaa</Value>
+  </Setting> 
+  <Setting Name="prismathemesettings.slidertype">
+    <Value>full-width-slider</Value>
+  </Setting>
+  <Setting Name="prismathemesettings.newsletterbackground">
+    <Value>electronics-pattern</Value>
+  </Setting>
+  <Setting Name="prismathemesettings.showsubcategoriesincategoryitembox">
+    <Value>true</Value>
+  </Setting>
+  <Setting Name="prismathemesettings.defaultproductimageproportion">
+    <Value>100</Value>
+  </Setting>
+  <Setting Name="prismathemesettings.defaultcategoryimageproportion">
+    <Value>100</Value>
+  </Setting>
+  <Setting Name="prismathemesettings.productimageproportion">
+    <Value>100</Value>
+  </Setting>
+  <Setting Name="prismathemesettings.categoryimageproportion">
+    <Value>100</Value>
+  </Setting>
+  <Setting Name="prismathemesettings.removedesignedby">
+    <Value>false</Value>
+  </Setting>
+  <Setting Name="prismathemesettings.removecopyright">
+    <Value>false</Value>
+  </Setting>
+  <Setting Name="ordersettings.onepagecheckoutenabled">
+    <Value>false</Value>
+  </Setting>
+  <Setting Name="catalogsettings.showproductsfromsubcategories">
+    <Value>true</Value>
+  </Setting>
+  <Setting Name="mediasettings.productthumbpicturesize">
+    <Value>360</Value>
+  </Setting>
+  <Setting Name="mediasettings.productdetailspicturesize">
+    <Value>600</Value>
+  </Setting>
+  <Setting Name="mediasettings.minicartthumbpicturesize">
+    <Value>95</Value>
+  </Setting>
+  <Setting Name="mediasettings.manufacturerthumbpicturesize">
+    <Value>345</Value>
+  </Setting>
+  <Setting Name="mediasettings.categorythumbpicturesize">
+    <Value>390</Value>
+  </Setting>
+  <Setting Name="mediasettings.productthumbpicturesizeonproductdetailspage">
+    <Value>100</Value>
+  </Setting>
+  <Setting Name="mediasettings.cartthumbpicturesize">
+    <Value>140</Value>
+  </Setting>
+  <Setting Name="mediasettings.associatedproductpicturesize">
+    <Value>320</Value>
+  </Setting>
+  <Setting Name="mediasettings.maximumimagesize">
+    <Value>1920</Value>
+  </Setting>
+  <Setting Name="cloudzoomsettings.zoomposition">
+    <Value>right</Value>
+  </Setting>
+  <Setting Name="cloudzoomsettings.adjustx">
+    <Value>10</Value>
+  </Setting>
+  <Setting Name="cloudzoomsettings.zoomwidth">
+    <Value>400</Value>
+  </Setting>
+  <Setting Name="cloudzoomsettings.zoomheight">
+    <Value>360</Value>
+  </Setting>
+  <Setting Name="cloudzoomsettings.zoomautoinside">
+    <Value>1024</Value>
+  </Setting>
+  <Setting Name="CloudZoomSettings.ResponsiveBreakpointsForThumbnailsCarousel-Prisma">
+    <Value>[{"breakpoint":1001,"settings":{"slidesToShow":5, "slidesToScroll":5,"arrows":false,"dots":true}},{"breakpoint":600,"settings":{"slidesToShow":4,"slidesToScroll":4,"arrows":false,"dots":true}},{"breakpoint":400,"settings":{"slidesToShow":3,"slidesToScroll":3,"arrows":false,"dots":true}}]</Value>
+  </Setting>
+  <Setting Name="JCarouselGeneralSettings.ResponsiveBreakpointsForSlickSlider-Prisma">
+    <Value>[{"breakpoint":1023,"settings":{"slidesToShow":4}},{"breakpoint":745,"settings":{"slidesToShow":3}},{"breakpoint":648,"settings":{"slidesToShow":2}},{"breakpoint":480,"settings":{"slidesToShow":2}},{"breakpoint":300,"settings":{"slidesToShow":1}}]</Value>
+  </Setting>
+  <Setting Name="JCarouselGeneralSettings.ArrowsContainer-Prisma">
+    <Value>.slick-carousel</Value>
+  </Setting>
+  <Setting Name="NopAjaxFiltersSettings.WidgetZone">
+    <Value>left_side_column_before</Value>
+  </Setting>
+  <Setting Name="NopAjaxFiltersSettings.ShowNumberOfReturnedProductsSelector">
+    <Value>.product-selectors</Value>
+  </Setting>
+  <Setting Name="NopAjaxFiltersSettings.ElementToScrollAfterFiltrationSelector">
+    <Value>.nop7SpikesAjaxFiltersGrid</Value>
+  </Setting>
+  <Setting Name="NopAjaxFiltersSettings.ScrolltoElementAfterFiltrationAdditionalOffset">
+    <Value>-140</Value>
+  </Setting>
+  <Setting Name="MegaMenuSettings.MegaMenuCategoryTemplate">
+    <Value>CategoryMenuTemplate.WithPictures</Value>
+  </Setting>
+  <Setting Name="MegaMenuSettings.MegaMenuManufacturerTemplate">
+    <Value>ManufacturerMenuTemplate.WithPictures</Value>
+  </Setting>
+  <Setting Name="MegaMenuSettings.NumberOfCategoriesPerRow">
+    <Value>6</Value>
+  </Setting>
+  <Setting Name="QuickViewSettings.ProductItemSelectorChild">
+    <Value>.buttons-wrapper .buttons</Value>
+  </Setting>
+  <Setting Name="QuickViewSettings.AccordionPanelsHeightStyle">
+    <Value>auto</Value>
+  </Setting>
+  <Setting Name="QuickViewSettings.ProductDetailsPictureSize">
+    <Value>340</Value>
+  </Setting>
+  <Setting Name="QuickViewSettings.ProductThumbPictureSize">
+    <Value>114</Value>
+  </Setting>
+  <Setting Name="MegaMenuSettings.CategoriesImageSize">
+    <Value>300</Value>
+  </Setting>
+  <Setting Name="MegaMenuSettings.ManufacturerImageSize">
+    <Value>300</Value>
+  </Setting>
+  <Setting Name="NopAjaxCartSettings.MiniProductDetailsViewImageSize">
+    <Value>288</Value>
+  </Setting>
+  <Setting Name="NopAjaxCartSettings.ProductAddedToCartImageSize">
+    <Value>277</Value>
+  </Setting>
+  <Setting Name="NopAjaxCartSettings.EnableProductQuantityTextBox">
+    <Value>false</Value>
+  </Setting>
+  <Setting Name="MegaMenuSettings.NumberOfCategoriesPerRow">
+    <Value>6</Value>
+  </Setting>
+  <Setting Name="MegaMenuSettings.NumberOfManufacturersPerRow">
+    <Value>6</Value>
+  </Setting>
+  <Setting Name="MegaMenuSettings.NumberOfVendorsPerRow">
+    <Value>6</Value>
+  </Setting>
+  <Setting Name="RichBlogSettings.HomePageWidgetZone">
+    <Value>prisma_home_page_two_columns</Value>
+  </Setting>
+  <Setting Name="RichBlogSettings.NumberOfBlogPostsToShow">
+    <Value>2</Value>
+  </Setting>
+  <Setting Name="RichBlogSettings.NumberOfCharactersInBlogpostPreviewOnHomePage">
+    <Value>120</Value>
+  </Setting>
+  <Setting Name="RichBlogSettings.HomePageImageSize">
+    <Value>620</Value>
+  </Setting>
+  <Setting Name="RichBlogSettings.BlogListImageWidgetZone">
+    <Value>bloglist_page_before_post_body</Value>
+  </Setting>
+  <Setting Name="RichBlogSettings.BlogDetailsImageSize">
+    <Value>935</Value>
+  </Setting>
+  <Setting Name="RichBlogSettings.BlogDetailsImageWidgetZone">
+    <Value>blogpost_page_before_body</Value>
+  </Setting>
+  <Setting Name="CloudZoomSettings.NumberOfScrollablePictureThumbnailsInCarousel-Prisma">
+    <Value>1</Value>
+  </Setting>
+  <Setting Name="QuickViewSettings.AccordionPanelsHeightStyle">
+    <Value>content</Value>
+  </Setting>
+  <Setting Name="quickviewsettings.productitemselector">
+    <Value>.product-item</Value>
+  </Setting>
+  <Setting Name="quickviewsettings.productitemselectorchild">
+    <Value>.buttons-wrapper .buttons</Value>
+  </Setting>
+  <Setting Name="QuickViewSettings.ProductDetailsPictureSize">
+    <Value>600</Value>
+  </Setting>
+  <Setting Name="CloudZoomSettings.EnableSliderDots">
+    <Value>true</Value>
+  </Setting>
+  <Setting Name="CloudZoomSettings.EnableSliderArrows">
+    <Value>false</Value>
+  </Setting>
+  <Setting Name="InstantSearchSettings.PictureSize">
+    <Value>80</Value>
+  </Setting>
+  <Setting Name="sevenspikescommonsettings.lazyloadimages">
+    <Value>True</Value>
+  </Setting>
+</Settings>

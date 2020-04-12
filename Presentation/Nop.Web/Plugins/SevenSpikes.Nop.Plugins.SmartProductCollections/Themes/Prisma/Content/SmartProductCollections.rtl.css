@@ -1,0 +1,139 @@
+﻿/*
+* Copyright 2016 Seven Spikes Ltd. All rights reserved. (http://www.nop-templates.com)
+* http://www.nop-templates.com/t/licensinginfo
+*/
+* {
+	direction: rtl;
+}
+
+/* COMMON STYLES */
+
+
+
+/* LOADING OVERLAY */
+.spc-body .loading-overlay {
+	left: 0;
+	right: 0;
+}
+.spc-body .loading-overlay span {
+	right: 50%;
+	left: auto;
+	margin: -20px -30px 0 0;
+}
+
+/* PRODUCTS */
+
+.spc-products .item-box {
+	border-right: 1px solid #eee;
+	border-left: 0;
+}
+.spc-products .item-box:nth-of-type(2n) {
+	border-left: 1px solid #eee;
+	border-right: 1px solid transparent;
+}
+.spc-products .item-box:nth-of-type(2n+1) {
+	clear: right;
+	border-left: 1px solid #eee;    
+    border-right: 1px solid #eee;
+}
+
+
+/* CATEGORIES */
+
+.spc-categories > .loading-overlay span {
+	right: 50%;
+	left: auto;
+	margin: -20px -30px 0 0;
+}
+@media all and (min-width: 769px) {
+	.spc-header li {
+		margin: 0 0 4px 4px;
+	}
+	.spc-header li:last-child {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.spc-products .item-box:nth-of-type(2n) {
+		border-left-color: #eee;
+		border-right-color: transparent;
+	}
+	.spc-products .item-box:nth-of-type(3n) {
+        clear: none;
+		border-left: 1px solid #eee;
+        border-right: 1px solid transparent;
+	}
+    .spc-products .item-box:nth-of-type(2n+1) {
+        clear: none;
+        border-right: 1px solid transparent;
+    }
+	.spc-categories .item-box:nth-of-type(3n+1),
+    .spc-products .item-box:nth-of-type(3n+1) {
+		clear: right;
+	}
+}
+@media all and (min-width: 1025px) {
+	.spc-header li {
+		margin: 0 5px 0 0;
+	}
+	.spc-products .spc-header .title {
+		min-height: 42px;
+	}
+	.spc-categories .spc-header ul {
+		float: left;
+	}
+	.spc-categories .category-info {
+		right: 0;
+		left: auto;
+	}
+	.spc-categories .category-title a {
+		right: 50%;
+		left: auto;
+		-webkit-transform: translate(50%, -50%);
+		-ms-transform: translate(50%, -50%);
+		transform: translate(50%, -50%);
+	}
+	.spc-categories .category-products {
+		float: left;
+	}
+	.spc-categories .item-box {
+		margin: 0 0 0 1%;
+	}
+	.spc-categories .item-box:last-child {
+		margin-left: 0;
+	}
+	.spc-categories .product-item {
+		text-align: right;
+	}
+	.spc-products .item-box:last-of-type {
+		border-left: 1px solid #eee;
+		border-right: 0;
+	}
+}
+@media all and (min-width: 1281px) {
+
+	.spc-categories .item-box {
+		margin: 0 0 0 2%;
+	}
+	.spc-products .item-box:nth-of-type(3n),
+	.spc-products .item-box:nth-of-type(4n) {
+		border-left: 1px solid #eee;
+		border-right: 1px solid transparent;
+	}
+    .spc-products .item-box:nth-of-type(3n+1),
+    .spc-products .item-box:nth-of-type(4n+1) {
+        clear: none;
+    }
+	.spc-products .item-box:nth-of-type(4n) {
+		border-left: 1px solid #eee;
+		border-right: 0;
+	}
+	.spc-products .item-box:last-child,
+    .spc-products .item-box:nth-of-type(5n) {
+		border-left: 1px solid #eee;
+		border-right: 0;
+	}
+	.spc-products .item-box:nth-of-type(5n+1) {
+		clear: right;
+        border-right: 1px solid #eee;
+	}
+}

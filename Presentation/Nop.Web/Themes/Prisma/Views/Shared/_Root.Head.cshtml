@@ -1,0 +1,103 @@
+﻿@using Nop.Core
+@using Nop.Core.Domain
+@using StackExchange.Profiling
+@using Nop.Core.Domain.Common
+@using Nop.Core.Domain.Seo
+@using Nop.Services.Events
+@using Nop.Services.Localization
+@using Nop.Services.Security
+@using Nop.Web.Framework.Events
+@using Nop.Services.Configuration
+@inject CommonSettings commonSettings
+@inject IEventPublisher eventPublisher
+@inject IPermissionService permissionService
+@inject IWorkContext workContext
+@inject SeoSettings seoSettings
+@inject StoreInformationSettings storeInformationSettings
+@inject IStoreContext storeContext
+@inject ISettingService settingService
+@inject Nop.Services.Localization.ILanguageService languageService
+@{
+    var storeId = storeContext.CurrentStore.Id;
+    var displayMiniProfiler = storeInformationSettings.DisplayMiniProfilerInPublicStore
+        && (!storeInformationSettings.DisplayMiniProfilerForAdminOnly || permissionService.Authorize(StandardPermissionProvider.AccessAdminPanel));
+
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/js/public.ajaxcart.js");
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/js/public.common.js");
+    //when jQuery migrate script logging is active you will see the log in the browser console
+    if (commonSettings.JqueryMigrateScriptLoggingActive)
+    {
+        Html.AppendScriptParts(ResourceLocation.Footer, "~/lib/jquery-migrate/jquery-migrate-3.0.1.js");
+    }
+    else
+    {
+        Html.AppendScriptParts(ResourceLocation.Footer, "~/lib/jquery-migrate/jquery-migrate-3.0.1.min.js");
+    }
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/lib/jquery-ui/jquery-ui-1.12.1.custom/jquery-ui.min.js");
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/lib/jquery-validate/jquery.validate.unobtrusive-v3.2.10/jquery.validate.unobtrusive.min.js");
+    Html.AppendScriptParts(ResourceLocation.Footer, "~/lib/jquery-validate/jquery.validate-v1.17.0/jquery.validate.min.js");
+    //jQuery is the only js file in the head. if we decide to move it to the footer, then ensure that all inline scripts (with jQuery usage) with are also moved to the footer
+    //the issue that it's not possible in some cases (e.g. "Edit address", when Ajax request is made on one-page checkout)
+    Html.AppendScriptParts(ResourceLocation.Head, "~/lib/jquery/jquery-3.3.1.min.js");
+
+    //X-UA-Compatible tag
+    if (commonSettings.RenderXuaCompatible)
+    {
+        Html.AppendHeadCustomParts($"<meta http-equiv=\"X-UA-Compatible\" content=\"{commonSettings.XuaCompatibleValue}\"/>");
+    }
+    //custom tag(s);
+    if (!string.IsNullOrEmpty(seoSettings.CustomHeadTags))
+    {
+        Html.AppendHeadCustomParts(seoSettings.CustomHeadTags);
+    }
+
+    var userAgent = Url.ActionContext.HttpContext.Request.Headers["User-Agent"];
+    if (!string.IsNullOrEmpty(userAgent) && userAgent.ToString().ToLower().IndexOf("MSIE 8.0", StringComparison.InvariantCultureIgnoreCase) > 0)
+    {
+        Html.AppendHeadCustomParts("<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"/>");
+    }
+
+    var currentPageClass = (await Html.PartialAsync("_CurrentPageClass")).ToHtmlString().Trim();
+    var itemBoxTypeClass = settingService.GetSettingByKey("prismathemesettings.ItemBoxType", "item-type-1", storeId, true).ToLowerInvariant();
+    var fontFamilyClass = settingService.GetSettingByKey("prismathemesettings.FontFamily", "comfortaa", storeId, true).ToLowerInvariant();
+
+    //event
+    eventPublisher.Publish(new PageRenderingEvent(this.Html));
+}
+<!DOCTYPE html>
+<html lang="@languageService.GetTwoLetterIsoLanguageName(workContext.WorkingLanguage)" @(this.ShouldUseRtlTheme() ? Html.Raw(" dir=\"rtl\"") : null) @Html.NopPageCssClasses()>
+    <head>
+        <title>@Html.NopTitle()</title>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+        <meta name="description" content="@(Html.NopMetaDescription())" />
+        <meta name="keywords" content="@(Html.NopMetaKeywords())" />
+        <meta name="generator" content="nopCommerce" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+        @Html.NopHeadCustom()
+        @*This is used so that themes can inject content into the header*@
+        @await Html.PartialAsync("Head")
+   	@await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.HeadHtmlTag })
+        @await Component.InvokeAsync("Widget", new { widgetZone = "head_html_tag_after_css_files_prisma"})
+        @Html.NopCssFiles(this.Url, ResourceLocation.Head)
+        @Html.NopScripts(this.Url, ResourceLocation.Head)
+        @Html.NopCanonicalUrls()
+        @await Component.InvokeAsync("NewsRssHeaderLink")
+        @await Component.InvokeAsync("BlogRssHeaderLink")
+        @*Favicon - upload favicon.ico file to the root directory*@
+        @await Component.InvokeAsync("Favicon")
+        @if (displayMiniProfiler)
+        {
+            <mini-profiler />
+        }
+        @Html.NopInlineScripts(this.Url, ResourceLocation.Head)
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700|Fira+Sans:400,700|Open+Sans:400,700|Playfair+Display:400,700&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext" rel="stylesheet">
+        <!--Powered by nopCommerce - https://www.nopCommerce.com-->
+    </head>
+    <body class="@currentPageClass font-@fontFamilyClass @itemBoxTypeClass">
+        @RenderBody()
+        @Html.NopCssFiles(this.Url, ResourceLocation.Footer)
+        @Html.NopScripts(this.Url, ResourceLocation.Footer)
+        @Html.NopInlineScripts(this.Url, ResourceLocation.Footer)
+        <div class="scroll-back-button" id="goToTop"></div>
+    </body>
+</html>

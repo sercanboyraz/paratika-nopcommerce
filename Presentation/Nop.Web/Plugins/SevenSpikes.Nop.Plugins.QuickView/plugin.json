@@ -1,0 +1,11 @@
+﻿{
+  "Group": "7Spikes",
+  "FriendlyName": "Nop Quick View",
+  "SystemName": "SevenSpikes.Nop.Plugins.QuickView",
+  "Version": "4.1",
+  "SupportedVersions": [ "4.10" ],
+  "Author": "Seven Spikes Ltd",
+  "DisplayOrder": 1,
+  "FileName": "SevenSpikes.Nop.Plugins.QuickView.dll",
+  "Description": "This plugin allows you to quickly see product details from the catalog pages."
+}

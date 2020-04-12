@@ -1,0 +1,20 @@
+/*
+* Copyright 2012 Seven Spikes Ltd. All rights reserved. (http://www.nop-templates.com)
+* http://www.nop-templates.com/t/licensinginfo
+*/
+
+.slick-list {
+    padding-right: 0;
+    padding-left: 1px;
+}
+@media (min-width: 1025px){
+    .two-colums-wrapper .jCarouselMainWrapper {
+        float: left;
+    }
+}
+@media (min-width: 1281px) {
+    .slick-list {
+        padding-right: 0;
+        padding-left: 4px;
+    }
+}

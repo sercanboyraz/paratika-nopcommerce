@@ -1,0 +1,46 @@
+﻿@using SevenSpikes.Nop.Plugins.MegaMenu.Models
+
+@model MenuItemVendorModel
+
+@{
+    var hasVendors = Model.Vendors.Count > 0;
+    var hasSublistClass = hasVendors ? "has-sublist" : string.Empty;
+    var withSubcategoriesClass = hasVendors ? "with-subcategories" : string.Empty;
+}
+
+<li class="@hasSublistClass @Model.Item.CssClass">
+
+    <a class="@withSubcategoriesClass" href="@Url.RouteUrl("VendorList")" title="@Model.Item.Title"><span>@Model.Item.Title</span></a>
+
+    @if (hasVendors)
+    {
+        <div class="plus-button"></div>
+        <div class="sublist-wrap">
+            <div class="navigation-wrapper">
+                <div class="close-menu">
+                    <span>@T("SevenSpikes.Themes.Common.CloseMenu")</span>
+                </div>
+                <div class="back-button">
+                    <span>@T("SevenSpikes.MegaMenu.ResponsiveBackButton")</span>
+                </div>
+            </div>
+            <ul class="sublist vendors">
+                @foreach (var vendor in Model.Vendors)
+                {
+                    <li>
+                        <a href="@Url.RouteUrl("Vendor", new { vendor.SeName })" title="@vendor.Name"><span>@vendor.Name</span></a>
+                    </li>
+                }
+
+                @if (Model.ShouldShowViewAllLink)
+                {
+                    <li>
+                        <a class="view-all" href="@Url.RouteUrl("VendorList")" title="@T("SevenSpikes.MegaMenu.ViewAllVendors")">
+                            <span>@T("SevenSpikes.MegaMenu.ViewAllVendors")</span>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+</li>

@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Kadioglu product sync",
+  "FriendlyName": "Kadioglu product sync",
+  "SystemName": "Kadioglu.Product",
+  "Version": "1.00",
+  "SupportedVersions": [ "4.10" ],
+  "Author": "sansder team",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Kadioglu.Product.dll",
+  "Description": "Kadioglu product sync"
+}

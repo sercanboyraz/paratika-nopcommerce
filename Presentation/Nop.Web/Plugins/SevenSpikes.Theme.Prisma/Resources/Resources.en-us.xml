@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Language Name="English">
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Admin.Menu.MenuName">
+    <Value>Prisma</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Admin.SettingsSubmenu.Prisma">
+    <Value>Settings</Value>
+  </LocaleResource>
+  <LocaleResource Name="Sevenspikes.Themes.Admin.ManageResources.Prisma">
+    <Value>Manage Resources</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Admin.Settings">
+    <Value>Settings</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Admin.Settings.ThemeSettings">
+    <Value>Prisma Theme Settings</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Admin.Settings.ThemeSettings.Preset">
+    <Value>Preset</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Admin.Settings.ThemeSettings.Preset.Hint">
+    <Value>Choose your color preset of the theme.</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Admin.Settings.ThemeSettings.ItemBoxType">
+    <Value>Item Box Type</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Admin.Settings.ThemeSettings.ItemBoxType.Hint">
+    <Value>Choose the type of your item box.</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Admin.Settings.CategoryGridItemsNumber">
+    <Value>Category Page product items per row</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Admin.Settings.CategoryGridItemsNumber.Hint">
+    <Value>Specify the default number of Product items per row on Category page on Desktop Resolutions</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Admin.Settings.ThemeSettings.FontFamily">
+    <Value>Font Family</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Admin.Settings.ThemeSettings.FontFamily.Hint">
+    <Value>Choose your theme's font family.</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Admin.Settings.ThemeSettings.SliderType">
+    <Value>Slider Type</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Admin.Settings.ThemeSettings.SliderType.Hint">
+    <Value>Choose the slider type.</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Admin.Settings.ThemeSettings.NewsletterBackground">
+    <Value>Newsletter Background</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Admin.Settings.ThemeSettings.NewsletterBackground.Hint">
+    <Value>Choose the newsletter background pattern that will appear on the Home Page.</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Admin.Settings.ThemeSettings.ShowSubCategoriesInCategoryItemBox">
+    <Value>Show sub-categories in category itembox</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Admin.Settings.ThemeSettings.ShowSubCategoriesInCategoryItemBox.Hint">
+    <Value>Choose whether or not the sub-categories will be shown in the category item box.</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Admin.Settings.ProductAttributeId">
+    <Value>Color Square product attribute</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Admin.Settings.ProductAttributeId.Hint">
+    <Value>Choose the color square product attribute which will be shown in the product box. Note: The attribute should be of type 'color square'!</Value>
+  </LocaleResource>
+  <LocaleResource Name="Newsletter.Title">
+    <Value>Newsletter</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.FeaturedCategories">
+    <Value>Featured Categories</Value>
+  </LocaleResource>
+  <LocaleResource Name="ShoppingCart.HeaderQuantity">
+    <Value>{0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="Wishlist.HeaderQuantity">
+    <Value>{0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Footer.Follow">
+    <Value>Follow us</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Footer.Address">
+    <Value>5th Avenue. London. 03SL40F</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Footer.Phone">
+    <Value>359-889-23-01-90;</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.AffiliateExtras">
+    <Value>Affiliate and Extras</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.BecomeAffiliate">
+    <Value>Become Affiliate</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.Brands">
+    <Value>Brands</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.CompanyInfo">
+    <Value>Company info</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.CustomerAssistance">
+    <Value>Customer Assistance</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.CustomerServices">
+    <Value>Customer services</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.DeliveryInformation">
+    <Value>Delivery Information</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.Share">
+    <Value>Share</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.Email">
+    <Value>support [at] Prismastore.com</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.EmailDomain">
+    <Value>store.com</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.EmailAt">
+    <Value>[at]</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.EmailName">
+    <Value>sales</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.FAQ">
+    <Value>Frequently Asked Questions</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.FollowUs">
+    <Value>Follow us</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.GiftVouchers">
+    <Value>Gift Vouchers</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.GoTo">
+    <Value>Go to...</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.GoToPage">
+    <Value>Product's page</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.Help">
+    <Value>Help</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.InternationalShipping">
+    <Value>International Shipping</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.LegalInformation">
+    <Value>Legal Information</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.LicenseAgreement">
+    <Value>License Agreement</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.Mobile">
+    <Value>+111 (Mobile) 012345</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.OurOffers">
+    <Value>Our Offers</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.PaymentOptions">
+    <Value>Payment options</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.Phone">
+    <Value>+222 (Phone) 987654</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.Search">
+    <Value>Search</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.SecurePayment">
+    <Value>Secure Payment</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.ServiceSupport">
+    <Value>Service and Support</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.ShippingReturns">
+    <Value>Shipping and Returns</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.Skype">
+    <Value>skype_Prisma</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.Social">
+    <Value>Connect with us:</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.Fax">
+    <Value>+555 (Fax) 4523768</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.Location">
+    <Value>Brussel, Belgium</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.Info">
+    <Value>Info</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.ViewAll">
+    <Value>View all products</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.FeaturedCategories">
+    <Value>Featured Categories</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.Filters.Sort">
+    <Value>Sort</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.Filters.Display">
+    <Value>Display</Value>
+  </LocaleResource>
+  <LocaleResource Name="HomePage">
+    <Value>Home</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Prisma.Common.UpoladFile">
+    <Value>Browse...</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.NopAjaxCart.ShoppingCartNotificationBoxContinueShopping">
+    <Value>Continue</Value>
+  </LocaleResource>
+</Language>
+

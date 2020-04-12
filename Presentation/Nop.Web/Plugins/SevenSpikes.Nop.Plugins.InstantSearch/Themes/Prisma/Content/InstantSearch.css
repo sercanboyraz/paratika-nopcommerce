@@ -1,0 +1,150 @@
+﻿/*
+* Copyright 2014 Seven Spikes Ltd. All rights reserved. (http://www.nop-templates.com)
+* http://www.nop-templates.com/t/licensinginfo
+*/
+
+/*=====================================================
+    
+MAIN CSS / SMALLER MOBILE DEVICES
+
+=====================================================*/
+
+
+.store-search-box span.search-box-text {
+    display: inline-block;
+    width: 86%;
+    width: -webkit-calc(100% - 40px);
+    width: calc(100% - 40px);
+    vertical-align: top;
+}
+.store-search-box.with-caregory-search-enabled span.search-box-text {
+    margin-left: 37%;
+}
+.store-search-box .search-box-select {
+    position:absolute;
+    top: 0;
+    left: 0;
+    border-right: 1px solid #57b568;
+    width: 37%;
+    height: 40px;
+    padding: 8px;
+    background: #4ea35d url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkI0RTlFMjZCN0I4MDExRTc4OEU2RjMxQjA4NTZBRkMyIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkI0RTlFMjZDN0I4MDExRTc4OEU2RjMxQjA4NTZBRkMyIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QjRFOUUyNjk3QjgwMTFFNzg4RTZGMzFCMDg1NkFGQzIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QjRFOUUyNkE3QjgwMTFFNzg4RTZGMzFCMDg1NkFGQzIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5AL9VCAAAAjElEQVR42mL4//8/AxCLQ2lsGCwHYqQB8XsgDsaiKBgqlwbiLP2PANOAmAOKpyGJL4XpzAHi71DBi1D8HyoGkmNEdocBEN9AMuUGVAzsRiYGBoY0IL4BxMpAbALEC4F4EZStDJUDu3EJKW7MJuBGBuSgALnnOhY3guUZwaoRgAeIp0DZOUD8BSYBEGAAlQAeI5zWBs0AAAAASUVORK5CYII=) no-repeat 90% center;
+    color: #fff;
+}
+.with-caregory-search-enabled span.search-box-text {
+    width: 50%;
+    width: -webkit-calc(100% - 37% - 40px);
+    width: calc(100% - 37% - 40px);
+}
+
+
+/* AUTOCOMPLETE */
+
+
+.instantSearch {
+    width: 100% !important;
+    height: auto !important;
+}
+.instantSearch.resize {
+    left: 0 !important;
+    width: 100% !important;
+}
+.instantSearch .k-list-container {
+    position: static !important;
+    width: 100% !important;
+    background: #fff;
+    box-shadow:  0 3px 5px rgba(0,0,0,0.1);
+}
+.instantSearch .k-list {
+    height: 100%;
+    overflow: auto;
+}
+.instantSearch .k-item {
+    border-top: 1px solid #eee;
+    cursor: pointer;
+}
+.instant-search-item {
+    overflow: hidden;
+    padding: 6px;
+    height: 92px;
+}
+.instant-search-item .img-block {
+    position: relative;
+    float: left;
+    border: 1px solid #eee;
+    overflow: hidden;
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    text-align: center;
+}
+.instant-search-item .img-block img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+.instant-search-item .detail {
+    margin: 10px 0 0 90px;
+    min-height: 42px;
+    text-align: left;
+}
+.instant-search-item .detail .title {
+    line-height: 1.2;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.instant-search-item .detail .sku {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+.instant-search-item .detail .price {
+    font-weight: bold;
+    font-size: 14px;
+    color: #57b568;
+}
+.k-item.k-state-hover .instant-search-item,
+.k-item.k-state-focused .instant-search-item  {
+    background: #f9f9f9;
+}
+
+@media all and (max-width: 1024px) {
+    .instantSearch .k-list-container {
+        max-height: calc(100vh - 150px);
+        overflow: auto;
+    }
+}
+
+@media all and (min-width: 1025px) {
+
+    .store-search-box .search-box-select {
+        border-right: 1px solid #eee;
+        height: 45px;
+        width: 200px;
+        background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhFRjIwODYzNENFOTExRTdCQ0IwOEU0MTMxNzkxQzc1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhFRjIwODY0NENFOTExRTdCQ0IwOEU0MTMxNzkxQzc1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OEVGMjA4NjE0Q0U5MTFFN0JDQjA4RTQxMzE3OTFDNzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OEVGMjA4NjI0Q0U5MTFFN0JDQjA4RTQxMzE3OTFDNzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz685BkCAAAAsElEQVR42nzQMQrCMBTG8VQyOLp5gO5Obg49RAcLOhd11lMITrad7VTQG2QVXDuqFxB3B53qP/ICRUIf/EKS9wgfCYwxihriqfz16/VYUlwRe4Zi6aV2MMIAJ+Toi1zubC/SLDNcsMUSE3lthDc2yLRcHnFGJQO2bkjwQNPOGGKMA0rZhy6j/stYYCEv7iSKchnnHRk/WLuMDfaejHdMUduDbv1ZLbkyBFjh5ZpfAQYAKPQox6WTAhgAAAAASUVORK5CYII=) no-repeat 93% center;
+        color: #888;
+    }
+    .store-search-box.with-caregory-search-enabled span.search-box-text {
+        margin-left: 39%;
+    }
+    .store-search-box span.search-box-text {
+        width: 91%;
+        width: -webkit-calc(100% - 45px);
+        width: calc(100% - 45px);
+    }
+    .with-caregory-search-enabled span.search-box-text {
+        display: inline-block;
+        width: 63%;
+        width: -webkit-calc(100% - 245px);
+        width: calc(100% - 245px);
+    }
+}
+@media all and (min-width: 1281px) {
+    .store-search-box.with-caregory-search-enabled span.search-box-text {
+        margin-left: 29%;
+    }
+}

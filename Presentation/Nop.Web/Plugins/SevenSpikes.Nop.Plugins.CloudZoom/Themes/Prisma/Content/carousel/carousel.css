@@ -1,0 +1,110 @@
+/*
+* Copyright 2016 Seven Spikes Ltd. All rights reserved. (http://www.nop-templates.com)
+* http://www.nop-templates.com/t/licensinginfo
+*/
+
+/* Theme template doesn't have its own theme plugin,
+   so this template is styled according to Deafault Clean's slick carousel settings,
+   create new settings for your theme if necessary*/
+
+.picture-thumbs.in-carousel {
+    max-width: 600px;
+    margin: 4px auto 0;
+    text-align: center;
+}
+.picture-thumbs .slick-list {
+    margin: 0 -5px;
+}
+.picture-thumbs .picture-thumbs-item {
+    padding: 0 5px;
+}
+.picture-thumbs.in-carousel .picture-thumbs-list {
+    margin: 0;
+}
+.picture-thumbs.in-carousel .picture-thumbs-list.slick-dotted {
+    padding-top: 34px;
+}
+.picture-thumbs .slick-track {
+    margin: 0 auto;
+}
+
+/* arrows nav */
+
+.picture-thumbs .slick-prev,
+.picture-thumbs .slick-next {
+    position: absolute;
+    top: 50%;
+    width: 15px;
+    height: 22px;
+    margin-top: -11px;
+	border: none;
+	background-color: #fff;
+	background-position: center;
+	background-repeat: no-repeat;
+    font-size: 0;
+	cursor: pointer;
+    transition: all .2s ease;
+}
+.picture-thumbs .slick-prev {
+    left: 0;
+    background-image: url('images/prev-horizontal.png');
+}
+.picture-thumbs .slick-next {
+    right: 0;
+    background-image: url('images/next-horizontal.png');
+    background-position: right center;
+}
+.picture-thumbs .slick-prev.slick-disabled,
+.picture-thumbs .slick-next.slick-disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+/* dots nav */
+
+.picture-thumbs .slick-dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 10px 20px;
+    background: #fff;
+}
+
+.slick-dots button {
+	border: none;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #ddd;
+	font-size: 0;
+}
+.slick-dots li {
+    display: inline-block;
+    margin: 0 5px;
+}
+.slick-dots .slick-active button {
+    background: #57b568;
+}
+
+/* items */
+
+.picture-thumbs a.cloudzoom-gallery {
+    display: block !important;
+    margin: 0 !important;
+    float: none !important;
+    width: auto !important;
+    height: auto !important;
+}
+.picture-thumbs a.cloudzoom-gallery:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+@media all and (min-width: 1025px) {
+
+    .picture-thumbs .slick-dots {
+        margin: 0;
+    }
+}

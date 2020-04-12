@@ -1,0 +1,35 @@
+﻿
+<div class="header">
+    @await Component.InvokeAsync("Widget", new { widgetZone = "header" })
+    <div class="header-logo">
+        @await Component.InvokeAsync("Logo")
+    </div>
+    <div class="header-links-wrapper">
+        <div class="header-selectors-wrapper">
+            @await Component.InvokeAsync("TaxTypeSelector")
+            @await Component.InvokeAsync("CurrencySelector")
+            @await Component.InvokeAsync("LanguageSelector")
+            @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.HeaderSelectors })
+            @*@if (Model.WishlistEnabled)
+            {
+            <div>
+                <a href="@Url.RouteUrl(" Wishlist")" class="ico-wishlist">
+                    <span class="wishlist-label">@T("Wishlist")</span>
+                    <span class="wishlist-qty">@T("Wishlist.HeaderQuantity", Model.WishlistItems)</span>
+                </a>
+            </div>
+            }*@
+        </div>
+        @await Component.InvokeAsync("HeaderLinks")
+        @await Component.InvokeAsync("FlyoutShoppingCart")
+    </div>
+    <div class="search-box store-search-box">
+            @await Component.InvokeAsync("SearchBox")
+    </div>
+    @*<div class="desktop-cart">
+        <div class="shopping-cart-link">
+            <a href="@url.routeurl("shoppingcart")">@t("shoppingcart")</a>
+            @await Component.InvokeAsync("FlyoutShoppingCart")
+        </div>
+    </div>*@
+</div>

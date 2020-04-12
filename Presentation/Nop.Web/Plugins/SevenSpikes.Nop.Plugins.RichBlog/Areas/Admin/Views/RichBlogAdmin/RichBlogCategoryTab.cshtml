@@ -1,0 +1,122 @@
+﻿@model int
+@inject IWebHelper webHelper
+
+@{
+    Layout = "";
+
+    <link href="@Url.Content("~/lib/fineuploader/fine-uploader.min.css")" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="@Url.Content("~/lib/fineuploader/jquery.fine-uploader.min.js")"></script>
+
+    var storeLocation = webHelper.GetStoreLocation().TrimEnd('/');
+}
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div id="rich-blog-categories-grid"></div>
+        </div>
+        <div class="panel-footer">
+            <input type="submit" id="btnAddNewCategory" name="btnAddNewCategory" value="@T("SevenSpikes.RichBlog.Admin.Category.AddNew")" onclick="javascript:OpenWindow('@(Url.Action("AvailableCategories", "CategoriesToBlogPostsAdmin", new { postId = Model, refreshBtnId = "btnRefreshBlogPost" }))', 800, 800, true); return false;" class="btn bg-blue" />
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        $("#rich-blog-categories-grid").kendoGrid({
+            dataSource: {
+                type: "json",
+                transport: {
+                    read: {
+                        url: "@Html.Raw(Url.Action("List", "RichBlogCategoryAdmin", new {postId = Model}))",
+                        type: "POST",
+                        dataType: "json",
+                        data: addAntiForgeryToken
+                    },
+                    destroy: {
+                        url: "@Html.Raw(Url.Action("Delete", "CategoriesToBlogPostsAdmin", new { postId = Model }))",
+                        type: "POST",
+                        dataType: "json",
+                        data: addAntiForgeryToken
+                    }
+                },
+                schema: {
+                    data: "Data",
+                    total: "Total",
+                    errors: "Errors",
+                    model: {
+                        id: "Id",
+                        fields: {
+                            Name: { editable: true, type: "string" },
+                            Id: { editable: false, type: "number" }
+                        }
+                    }
+                },
+                requestEnd: function (e) {
+                    if (e.type == "create" || e.type == "update") {
+                        this.read();
+                    }
+                },
+                error: function (e) {
+                    display_kendoui_grid_error(e);
+                    // Cancel the changes
+                    this.cancelChanges();
+                },
+                serverPaging: true,
+                serverFiltering: true,
+                serverSorting: true
+            },
+            editable: "inline",
+            pageable: {
+                refresh: true,
+                numeric: false,
+                previousNext: false,
+                info: false
+            },
+            scrollable: false,
+            columns: [{
+                field: "Name",
+                title: "@T("SevenSpikes.RichBlog.Admin.Category.Name")",
+                width: 200,
+            }, {
+                field: "edit",
+                title: "Edit",
+                template: kendo.template($("#edit-template").html()),
+                width: 50,
+                filterable: false,
+                sortable: false
+            }, {
+                command: [
+                    {
+                        name: "destroy",
+                        text: "@T("Admin.Common.Delete")"
+                    }
+                ],
+                width: 150
+            }]
+        });
+    });
+</script>
+
+<div>
+    <input type="submit" id="btnRefreshBlogPost" name="btnRefreshBlogPost" style="display: none" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnRefreshBlogPost').click(function () {
+                //refresh grid
+                var optionsGrid = $("#rich-blog-categories-grid").data('kendoGrid');
+                optionsGrid.dataSource.read();
+
+                //return false to don't reload a page
+                return false;
+            });
+        });
+    </script>
+</div>
+
+<script id="edit-template" type="text/x-kendo-template">
+    <a class="k-button" href="@storeLocation/admin/RichBlogCategoryAdmin/Edit?categoryId=#: Id#">
+        <span class="k-icon k-update"></span> @T("Admin.Common.Edit")
+    </a>
+</script>

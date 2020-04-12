@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Payment methods",
+  "FriendlyName": "Paratika",
+  "SystemName": "Payments.Paratika",
+  "Version": "1.00",
+  "SupportedVersions": [ "4.10" ],
+  "Author": "Paratika team",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Payment.Paratika.dll",
+  "Description": "This plugin allows paying with Paratika"
+}

@@ -1,0 +1,15 @@
+﻿@model CategorySimpleModel
+
+@if (Model.SubCategories.Count > 0)
+{
+    <ul class="sub-categories-list">
+        @foreach (CategorySimpleModel category in Model.SubCategories)
+        {
+            <li>
+                <a href="@Url.RouteUrl("Category", new { category.SeName })" title="@category.Name">
+                    @category.Name
+                </a>
+            </li>
+        }
+    </ul>
+}

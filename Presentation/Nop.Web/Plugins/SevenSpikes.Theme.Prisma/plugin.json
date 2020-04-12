@@ -1,0 +1,11 @@
+﻿{
+  "Group": "7Spikes",
+  "FriendlyName": "Nop Prisma Theme",
+  "SystemName": "SevenSpikes.Theme.Prisma",
+  "Version": "4.1",
+  "SupportedVersions": [ "4.10" ],
+  "Author": "Seven Spikes Ltd",
+  "DisplayOrder": 2,
+  "FileName": "SevenSpikes.Theme.Prisma.dll",
+  "Description": "This plugin allows you to configure the Prisma theme settings"
+}

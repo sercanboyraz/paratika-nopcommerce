@@ -1,0 +1,164 @@
+﻿/*
+* Copyright 2014 Seven Spikes Ltd. All rights reserved. (http://www.nop-templates.com)
+* http://www.nop-templates.com/t/licensinginfo
+*/
+
+.mega-menu, .menu-title,
+.mega-menu .dropdown {
+    display: none;
+}	 
+
+@media all and (min-width: 1025px) {
+
+    .menu-title,
+    .close-menu {
+        display: none;
+    }
+    .mega-menu {
+        display: block;
+        position: relative;
+    }
+    .mega-menu-responsive {
+        display: none !important;
+    }
+    .mega-menu .dropdown {
+        opacity: 0;
+        display: block;
+        position: absolute;
+        left: 50%;
+        margin-left: -490px;
+        border-top: 1px solid #eee;
+        width: 980px;
+        max-height: 400px;
+        max-height: -webkit-calc(100vh - 250px);
+        max-height: calc(100vh - 250px);
+        box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        overflow: hidden;
+        background: #f6f6f6;
+        -webkit-transition: transform .3s , opacity .3s;
+        transition: transform .3s , opacity .3s;
+        -webkit-transform: translateY(20px);
+        -ms-transform: translateY(20px);
+        transform: translateY(20px);
+        pointer-events: none;
+    }
+    .mega-menu .dropdown.active {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+    .mega-menu .dropdown .row-wrapper {
+        padding: 10px;
+    }
+    .mega-menu[data-enableclickfordropdown='true'] .dropdown,
+    .mega-menu[data-enableclickfordropdown='true'] .sublist-wrap {
+        display: none;
+        opacity: 1;
+        transform: none;
+    }
+    .mega-menu[data-enableclickfordropdown='true'] .dropdown.active,
+    .mega-menu[data-enableclickfordropdown='true'] .sublist-wrap.active {
+        display: block;
+    }
+    .mega-menu .row {
+        overflow: hidden;
+    }
+    .mega-menu .box {
+        float: left;
+        padding: 10px 10px 20px;
+    }
+    .mega-menu .boxes-4 .box {
+        width: 25%;
+    }
+    .mega-menu .boxes-5 .box {
+        width: 20%;
+    }
+    .mega-menu .boxes-6 .box {
+        width: 16.66666%;
+    }
+    .mega-menu .boxes-7 .box {
+        width: 14.28%;
+    }
+    .mega-menu .boxes-8 .box {
+        width: 12.5%;
+    }
+    .mega-menu .title {
+        margin-bottom: 4px;
+        padding: 15px 0;
+        background: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: bold;
+        font-size: 15px;
+        color: #444;
+        transition: all .3s;
+    }
+    .mega-menu .title:hover {
+        color: #57b568;
+    }
+    .mega-menu .picture a {
+        display: block;
+        position: relative;
+        background: #fff;
+        overflow: hidden;
+    }
+    .mega-menu .picture a:before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+    .mega-menu .picture img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        width: 100%;
+        max-width: 100%;
+    }
+    .mega-menu .box ul {
+        margin-top: 5px;
+    }
+    .mega-menu .box li {
+        margin-top: 15px;
+        text-align: left;
+    }
+    .mega-menu .box li a {
+        font-size: 13px;
+        color: #888;
+        transition: all .3s;
+    }
+    .mega-menu .box li:before {
+        content: '\e925';
+        display: inline-block;
+        margin-right: 10px;
+        font-family: 'prisma';
+        font-size: 10px;
+        color: #dcdde0;
+        transition: all .3s;
+    }
+    .mega-menu .box li:hover:before {
+        -webkit-transform: translateX(5px);
+        -ms-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    .mega-menu .box li a:hover {
+        color: #57b568;
+    }
+    .mega-menu li a.view-all {
+        font-weight: bold;
+        background: none;
+    }
+}
+
+@media all and (min-width: 1281px) {
+
+    .mega-menu .dropdown {
+        margin-left: -625px;
+        width: 1250px;
+    }
+
+}

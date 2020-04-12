@@ -1,0 +1,156 @@
+/*
+* Copyright 2016 Seven Spikes Ltd. All rights reserved. (http://www.nop-templates.com)
+* http://www.nop-templates.com/t/licensinginfo
+*/
+
+.gallery {
+    display: none;
+}
+.gallery.sevenspikes-cloudzoom-gallery {
+    display: block;
+    position: relative;
+    margin: 0 auto 20px;
+}
+.gallery .picture-wrapper {
+    position: relative;
+}
+.gallery .picture-wrapper > img { /* Transitional image (on thumbnail click) */
+	top: 0;
+    right: 0;
+	left: 0;
+    margin: auto;
+}
+/* navigation*/
+.picture-thumbs-navigation-arrow {
+    position: absolute;
+    top: 45%;
+    padding: 10px;
+    width: 40px;
+    height: 55px;
+    background: #f2f2f2;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    opacity: .8;
+    cursor: pointer;
+    font-size: 0;
+    z-index: 2;
+}
+.picture-thumbs-navigation-arrow:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: prisma;
+    font-size: 12px;
+    color: #c3c3c3;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.picture-thumbs-navigation-arrow:hover {
+    opacity: 1;
+}
+.picture-thumbs-prev-arrow {
+    left: 0;
+}
+.picture-thumbs-prev-arrow:after {
+    content: '\e924';
+}
+.picture-thumbs-next-arrow {
+    right: -1px;
+}
+.picture-thumbs-next-arrow:after {
+    content: '\e925';
+}
+
+/* Zoom Lens, Zoom Window, Zoom Caption */
+
+.cloudzoom-lens {
+	z-index: 1;
+    opacity: 0.7;
+    cursor: crosshair;
+}
+.cloudzoom-lens:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: #fff;	
+	z-index: 1;
+}
+
+.cloudzoom-zoom {
+	top: 0 !important;
+    left: calc(100% + 25px) !important;
+	z-index: 9999; /*adjust per theme or leave it high*/
+}
+.cloudzoom-blank {
+    top: 50% !important;
+    transform: translateY(-50%);
+}
+
+.sevenspikes-cloudzoom-gallery .cloudzoom-zoom img,
+.sevenspikes-cloudzoom-gallery .cloudzoom-zoom-inside img {
+    max-height: none;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    right: auto;
+}
+.cloudzoom-zoom-inside {
+	top: 0 !important;
+	right: 0;
+    left: 0 !important;
+	/*these coordinates center the zoomed image horizontally, the main image should be always centered too*/
+	/*coordinates may be different than 0 if there is a border around the main picture*/
+	height: 100% !important;
+	margin: auto;
+    cursor: crosshair;
+	z-index: 1;
+}
+.cloudzoom-zoom-inside img + div { /*title-wrapper*/
+	top: auto !important;
+	bottom: 0 !important;
+}
+.cloudzoom-caption {
+    display: none;
+	padding: 15px 20px;
+	background-color: rgba(50,50,50,.8);
+    color: #fff;
+}
+
+/* Loading Images */
+
+.cloudzoom-blank {
+	top: 0;
+    right: 0;
+	left: 0;
+    margin: auto;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIAQMAAAD+wSzIAAAAA3NCSVQICAjb4U/gAAAABlBMVEUAAAD///+l2Z/dAAAAAnRSTlP/AOW3MEoAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAWdEVYdENyZWF0aW9uIFRpbWUAMDYvMzAvMTLNuPjnAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M1cbXjNgAAAAxJREFUCJlj+M+AAgE/0Af5DM23uwAAAABJRU5ErkJggg==');
+}
+.cloudzoom-ajax-loader {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+    background: rgba(255,255,255,.8);
+}
+.cloudzoom-ajax-loader:after {
+    content: '.';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -20px 0 0 -30px;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 40px solid #57b568;
+    -webkit-animation: triangle-skew-spin 3s 0s cubic-bezier(.09,.57,.49,.9) infinite;
+    animation: triangle-skew-spin 3s 0s cubic-bezier(.09,.57,.49,.9) infinite;
+    font-size: 0;
+    text-indent: -9999px;
+}

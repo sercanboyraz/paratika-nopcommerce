@@ -1,0 +1,23 @@
+﻿@using Nop.Core
+@using Nop.Services.Localization
+
+@inject IThemeContext themeContext
+@inject ILocalizationService localizationService
+@inject IStoreContext storeContext
+
+@{
+    var logoPath = $"~/Themes/{themeContext.WorkingThemeName}/Content/img/logo.png";
+    var themeLogo = await Component.InvokeAsync("Widget", new { widgetZone = "prisma_theme_logo"});
+}
+
+<a href="@Url.RouteUrl("HomePage")" class="logo">
+    @if (!String.IsNullOrEmpty(themeLogo.ToHtmlString()))
+    {
+        @themeLogo
+    }
+    else
+    {
+	string storeName = localizationService.GetLocalized(storeContext.CurrentStore, x => x.Name);
+        <img title="" alt="@storeName" src="@Url.Content(logoPath)">
+    }
+</a>
