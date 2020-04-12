@@ -60,7 +60,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nop.Plugin.Kadioglu.Product
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nop.Plugin.Payment.Paratika", "Plugins\Nop.Plugin.Payment.Paratika\Nop.Plugin.Payment.Paratika.csproj", "{C9FC70F3-D884-474A-BAF2-45D25206BAA4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sansder", "Sansder", "{9867279D-0C40-4BDF-B3E6-5954E6C6C12D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Private", "Private", "{9867279D-0C40-4BDF-B3E6-5954E6C6C12D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

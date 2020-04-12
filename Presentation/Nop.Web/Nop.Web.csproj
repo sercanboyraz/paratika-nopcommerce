@@ -27,8 +27,14 @@
     <Content Update="App_Data\DataProtectionKeys\*.xml" CopyToPublishDirectory="Never" />
 
     <Compile Remove="Plugins\**" />
+
+    <Compile Remove="Themes\Prisma\**" />
+
+    <Content Remove="Themes\Prisma\**" />
     <EmbeddedResource Remove="Plugins\**" />
+    <EmbeddedResource Remove="Themes\Prisma\**" />
     <None Remove="Plugins\**" />
+    <None Remove="Themes\Prisma\**" />
 
     <!-- We copy the entire \Plugins and \Themes directories.
 	    But we ignore cshtml and JSON files to avoid "Duplicate 'Content' items were included" error during publishing.
@@ -38,6 +44,49 @@
 
     <!-- We copy the \Logs directory -->
     <Content Include="Logs\**" CopyToPublishDirectory="PreserveNewest" />
+    <Content Remove="Themes\Prisma\Content\css\1024.css" />
+    <Content Remove="Themes\Prisma\Content\css\1024.rtl.css" />
+    <Content Remove="Themes\Prisma\Content\css\1280.css" />
+    <Content Remove="Themes\Prisma\Content\css\1280.rtl.css" />
+    <Content Remove="Themes\Prisma\Content\css\480.css" />
+    <Content Remove="Themes\Prisma\Content\css\480.rtl.css" />
+    <Content Remove="Themes\Prisma\Content\css\768.css" />
+    <Content Remove="Themes\Prisma\Content\css\768.rtl.css" />
+    <Content Remove="Themes\Prisma\Content\css\ie9-fix.css" />
+    <Content Remove="Themes\Prisma\Content\css\mobile.css" />
+    <Content Remove="Themes\Prisma\Content\css\mobile.rtl.css" />
+    <Content Remove="Themes\Prisma\Content\css\print.css" />
+    <Content Remove="Themes\Prisma\Content\css\styles.css" />
+    <Content Remove="Themes\Prisma\Content\css\styles.rtl.css" />
+    <Content Remove="Themes\Prisma\Content\css\theme.custom-1.css" />
+    <Content Remove="Themes\Prisma\Content\font\prisma.eot" />
+    <Content Remove="Themes\Prisma\Content\font\prisma.svg" />
+    <Content Remove="Themes\Prisma\Content\font\prisma.ttf" />
+    <Content Remove="Themes\Prisma\Content\font\prisma.woff" />
+    <Content Remove="Themes\Prisma\Content\img\baby_bgr.png" />
+    <Content Remove="Themes\Prisma\Content\img\back_icon.png" />
+    <Content Remove="Themes\Prisma\Content\img\close.png" />
+    <Content Remove="Themes\Prisma\Content\img\electronics_pattern.png" />
+    <Content Remove="Themes\Prisma\Content\img\fashion_pattern.png" />
+    <Content Remove="Themes\Prisma\Content\img\fb_custom_btn.jpg" />
+    <Content Remove="Themes\Prisma\Content\img\folder1.png" />
+    <Content Remove="Themes\Prisma\Content\img\folder2.png" />
+    <Content Remove="Themes\Prisma\Content\img\folder3.png" />
+    <Content Remove="Themes\Prisma\Content\img\furniture_pattern.png" />
+    <Content Remove="Themes\Prisma\Content\img\goTop.png" />
+    <Content Remove="Themes\Prisma\Content\img\ie_warning.jpg" />
+    <Content Remove="Themes\Prisma\Content\img\loading.gif" />
+    <Content Remove="Themes\Prisma\Content\img\logo.png" />
+    <Content Remove="Themes\Prisma\Content\img\payment_sprite.png" />
+    <Content Remove="Themes\Prisma\Content\img\rating.svg" />
+    <Content Remove="Themes\Prisma\Content\img\rating_gray.svg" />
+    <Content Remove="Themes\Prisma\Content\img\rss-icon.png" />
+    <Content Remove="Themes\Prisma\Content\img\search.png" />
+    <Content Remove="Themes\Prisma\Content\img\subscribe-button.png" />
+    <Content Remove="Themes\Prisma\Content\img\table-minus.png" />
+    <Content Remove="Themes\Prisma\Content\img\table-plus.png" />
+    <Content Remove="Themes\Prisma\Content\scripts\prisma.js" />
+    <Content Remove="Themes\Prisma\preview.jpg" />
 
     <None Update="Areas\Admin\sitemap.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
