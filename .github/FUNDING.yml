@@ -1,8 +1,6 @@
-# These are supported funding model platforms
-
-github: [sercanboyraz]
+tidelift: nuget/paratika-nopcommerce
 patreon: sercanboyraz
-open_collective: e-commerce
+open_collective: sercan-boyraz
 ko_fi: sercanboyraz
 otechie: sercanboyraz
-custom: ["https://tr.linkedin.com/in/sercan-boyraz-a40429b7", linkedin]
+custom: ["https://tr.linkedin.com/in/sercan-boyraz-a40429b7"]
