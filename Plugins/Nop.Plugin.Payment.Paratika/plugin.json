@@ -3,8 +3,8 @@
   "FriendlyName": "Paratika",
   "SystemName": "Payments.Paratika",
   "Version": "1.00",
-  "SupportedVersions": [ "4.10" ],
-  "Author": "Paratika team",
+  "SupportedVersions": [ "4.00", "4.10", "4.20" ],
+  "Author": "Boyraz Team",
   "DisplayOrder": 1,
   "FileName": "Nop.Plugin.Payment.Paratika.dll",
   "Description": "This plugin allows paying with Paratika"

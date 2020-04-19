@@ -337,21 +337,20 @@ function setDataTable(data, displayLocales, currencyCode) {
 
 }
 
-function btSaveFunction() {
+function sendPayment() {
     $('.json-overlay').css({ position: 'absolute' });
     try {
         var modelCardholderName = $('#name').val();
         var modelCardNumber = $('#cardnumber').val();
         var modelCardCode = $('#securitycode').val();
+        var modelExpireCardMounth= $('#expirationdate').val();
+        var modelExpireCardYear= $('#expirationdate2').val();
         if (modelCardholderName !== null && modelCardholderName !== "" &&
             modelCardNumber !== null && modelCardNumber !== "" &&
-            modelCardCode !== null && modelCardCode !== "") {
-            //var selectedInstallmentPricesInt = $("input[name=group1]:checked").val();
-
-            //if (selectedInstallmentPricesInt !== null && selectedInstallmentPricesInt !== 0) {
-            //    installmentPricesInt = selectedInstallmentPricesInt.split("-")[0];
-            //    installmentPrice = selectedInstallmentPricesInt.split("-")[1];
-            //}
+            modelCardCode !== null && modelCardCode !== "" &&
+            modelExpireCardMounth !== null && modelExpireCardMounth !== "" &&
+            modelExpireCardYear !== null && modelExpireCardYear !== "")
+        {
             var model = {
                 CardholderName: $('#name').val(),
                 CardNumber: $('#cardnumber').val(),
@@ -359,12 +358,12 @@ function btSaveFunction() {
                 ExpireCardYear: $('#expirationdate2').val(),
                 CardCode: $('#securitycode').val(),
                 Installment: $('#installmentCount').val(),
-                IsProcess3D: false,
-                SessionToken: $('#sessionTokenData').val()
+                SessionToken: $('#sessionTokenData').val(),
+                MainURL: $('#mainURLData').val(),
             };
 
             $.ajax({
-                url: "../Admin/Paratika/ParatikaPaymentInfo3D",
+                url: "../Paratika/ParatikaPaymentInfo3D",
                 data: model,
                 type: 'GET',
                 error: function (response, status, jqxhr) {
@@ -389,20 +388,24 @@ function btSaveFunction() {
     }
 }
 
-function getParatikaFirstRequest() {
+function paratikaFirstRequest(mainUrl) {
     var model = {
         CardholderName: $('#name').val(),
         CardNumber: $('#cardnumber').val(),
         ExpireCardMounth: $('#expirationdate').val(),
         ExpireCardYear: $('#expirationdate2').val(),
         CardCode: $('#securitycode').val(),
-        IsProcess3D: false,
-        SessionToken: $('#sessionTokenData').val()
+        SessionToken: $('#sessionTokenData').val(),
+        MainURL: $('#mainURLData').val(),
     };
-
     $.ajax({
-        url: "../Admin/Paratika/ParatikaPaymentInfo",
+        url: "../Paratika/ParatikaPaymentInfo",
         data: model,
+        headers: {
+            //with cross-origin
+            'Access-Control-Allow-Credentials': 'true',
+            'Access-Control-Allow-Origin': mainUrl
+        },
         type: 'GET',
         error: function (response, status, jqxhr) {
             var errormes = response.responseText;
@@ -415,15 +418,16 @@ function getParatikaFirstRequest() {
         },
         success: function (data) {
             $("#btnSave").hide();
+            window.location.href = data.PaymentHPMethodURL;
         }
     });
 }
 
-function getParatikaInstallment() {
+function paratikaInstallment() {
     var cardBin = $('#cardnumber').val();
     if (cardBin.length > 5) {
         $.ajax({
-            url: "../Admin/Paratika/ParatikaInstallment?cardpin=" + cardBin.substr(0, 6),
+            url: "../Paratika/ParatikaInstallment?cardpin=" + cardBin.substr(0, 6),
             type: 'GET',
             error: function (response, status, jqxhr) {
                 var errormes = response.responseText;
@@ -436,7 +440,7 @@ function getParatikaInstallment() {
             },
             success: function (data) {
                 $("#btnSave").hide();
-                $('#bankName')["0"].innerHTML = data.installmentPaymentSystem.name;
+                $('#bankName').innerHTML = data.installmentPaymentSystem.name;
                 setDataTable(data.installmentPaymentSystem.installmentList, data.installmentPaymentSystem.displayLocales, data.installmentPaymentSystem.currencyCode);
             }
         });

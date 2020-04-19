@@ -11,17 +11,6 @@
     <div class="panel-group">
         <div class="panel panel-default">
             <div class="panel-body">
-
-                @*<div class="form-group">
-                        <div class="col-md-3">
-                            @Html.OverrideStoreCheckboxFor(model => model.TransactModeId_OverrideForStore, model => model.TransactModeId, Model.ActiveStoreScopeConfiguration)
-                            @Html.NopLabelFor(model => model.TransactModeValues)
-                        </div>
-                        <div class="col-md-9">
-                            @Html.NopDropDownList("TransactModeId", Model.TransactModeValues)
-                        </div>
-                    </div>*@
-
                 <div class="form-group">
                     <div class="col-md-3">
                         <nop-override-store-checkbox asp-for="Code_OverrideForStore" asp-input="Code" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
@@ -29,6 +18,10 @@
                     </div>
                     <div class="col-md-9">
                         <nop-editor asp-for="Code" />
+                        @if (string.IsNullOrWhiteSpace(Model.Code))
+                        {
+                            <nop-required />
+                        }
                         <span asp-validation-for="Code"></span>
                     </div>
                 </div>
@@ -40,6 +33,10 @@
                     </div>
                     <div class="col-md-9">
                         <nop-editor asp-for="Username" />
+                        @if (string.IsNullOrWhiteSpace(Model.Username))
+                        {
+                            <nop-required />
+                        }
                         <span asp-validation-for="Username"></span>
                     </div>
                 </div>
@@ -51,40 +48,63 @@
                     </div>
                     <div class="col-md-9">
                         <nop-editor asp-for="Password" />
+                        @if (string.IsNullOrWhiteSpace(Model.Password))
+                        {
+                            <nop-required />
+                        }
                         <span asp-validation-for="Password"></span>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-3">
-                        <nop-override-store-checkbox asp-for="Guid_OverrideForStore" asp-input="Guid" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
-                        <nop-label asp-for="Guid" />
+                        <nop-override-store-checkbox asp-for="APIURL_OverrideForStore" asp-input="APIURL" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="APIURL" />
                     </div>
                     <div class="col-md-9">
-                        <nop-editor asp-for="Guid" />
-                        <span asp-validation-for="Guid"></span>
+                        <nop-editor asp-for="APIURL" />
+                        @if (string.IsNullOrWhiteSpace(Model.APIURL))
+                        {
+                            <nop-required />
+                        }
+                        <span asp-validation-for="APIURL"></span>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-3">
-                        <nop-override-store-checkbox asp-for="URL_OverrideForStore" asp-input="URL" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
-                        <nop-label asp-for="URL" />
+                        <nop-override-store-checkbox asp-for="MainURL_OverrideForStore" asp-input="MainURL" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="MainURL" />
                     </div>
                     <div class="col-md-9">
-                        <nop-editor asp-for="URL" />
-                        <span asp-validation-for="URL"></span>
+                        <nop-editor asp-for="MainURL" />
+                        @if (string.IsNullOrWhiteSpace(Model.MainURL))
+                        {
+                            <nop-required />
+                        }
+                        <span asp-validation-for="MainURL"></span>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-3">
-                        <nop-override-store-checkbox asp-for="AdditionalFee_OverrideForStore" asp-input="AdditionalFee" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
-                        <nop-label asp-for="AdditionalFee" />
+                        <nop-override-store-checkbox asp-for="PaymentHPMethod_OverrideForStore" asp-input="PaymentHPMethod" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="PaymentHPMethod" />
                     </div>
                     <div class="col-md-9">
-                        <nop-editor asp-for="AdditionalFee" />
-                        <span asp-validation-for="AdditionalFee"></span>
+                        <nop-editor asp-for="PaymentHPMethod" />
+                        <span asp-validation-for="PaymentHPMethod"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="PaymentHPMethodURL_OverrideForStore" asp-input="PaymentHPMethodURL" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="PaymentHPMethodURL" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="PaymentHPMethodURL" />
+                        <span asp-validation-for="PaymentHPMethodURL"></span>
                     </div>
                 </div>
 
@@ -96,6 +116,17 @@
                     <div class="col-md-9">
                         <nop-editor asp-for="AdditionalFeePercentage" />
                         <span asp-validation-for="AdditionalFeePercentage"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="AdditionalFee_OverrideForStore" asp-input="AdditionalFee" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="AdditionalFee" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="AdditionalFee" />
+                        <span asp-validation-for="AdditionalFee"></span>
                     </div>
                 </div>
 

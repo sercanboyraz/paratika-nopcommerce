@@ -30,7 +30,7 @@ namespace Nop.Plugin.Payment.Paratika.Helpers
             requestParameters.Add("AMOUNT", orderTotal.ToString());
             requestParameters.Add("CURRENCY", "TRY");
             requestParameters.Add("SESSIONTYPE", "PAYMENTSESSION");
-            requestParameters.Add("RETURNURL", $"{storeLocation}/Admin/Paratika/PaymentInfoCallBack");
+            requestParameters.Add("RETURNURL", $"{storeLocation}Paratika/PaymentInfoCallBack");
 
             JArray oItems = new JArray();
             foreach (var card in cart)
@@ -43,17 +43,22 @@ namespace Nop.Plugin.Payment.Paratika.Helpers
                 item.Add("amount", card.Product.Price);
                 oItems.Add(item);
             }
-            var productSum = cart.Sum(x => x.Product.Price);
+
+            decimal productSum = 0;
+            foreach (var item in oItems)
+            {
+                productSum += Convert.ToDecimal(item["amount"]) * Convert.ToInt32(item["quantity"]);
+            }
             if (orderTotal != productSum)
             {
                 if (orderTotal > productSum)
                 {
                     var diffrerent = orderTotal - productSum;
                     JObject item = new JObject();
-                    item.Add("code", "vergi");
-                    item.Add("name", "vergi");
+                    item.Add("code", "different");
+                    item.Add("name", "different");
                     item.Add("quantity", "1");
-                    item.Add("description", "vergi");
+                    item.Add("description", "different");
                     item.Add("amount", diffrerent.ToString());
                     oItems.Add(item);
                 }
@@ -61,10 +66,10 @@ namespace Nop.Plugin.Payment.Paratika.Helpers
                 {
                     var diffrerent = productSum - orderTotal;
                     JObject item = new JObject();
-                    item.Add("code", "indirim");
-                    item.Add("name", "indirim");
+                    item.Add("code", "discount");
+                    item.Add("name", "discount");
                     item.Add("quantity", "1");
-                    item.Add("description", "indirim");
+                    item.Add("description", "discount");
                     item.Add("amount", diffrerent.ToString());
                     oItems.Add(item);
                 }
@@ -73,7 +78,7 @@ namespace Nop.Plugin.Payment.Paratika.Helpers
 
             JObject extra = new JObject();
             extra.Add("IntegrationModel", "API");
-            extra.Add("AlwaysSaveCard", "true");
+            //extra.Add("AlwaysSaveCard", "true");
             requestParameters.Add("EXTRA", encodeParameter(extra.ToString()));
 
             requestParameters.Add("CUSTOMER", _workContext.CurrentCustomer.CustomerGuid.ToString());
@@ -100,37 +105,28 @@ namespace Nop.Plugin.Payment.Paratika.Helpers
         public static string getConnection(string url, string reqMsg)
         {
             string outputData = string.Empty;
-            try
-            {
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-                request.Method = "POST";
-                request.ContentType = "application/x-www-form-urlencoded";
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11;
-                ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
-                System.Net.ServicePointManager.Expect100Continue = false;
-                byte[] data = Encoding.UTF8.GetBytes(reqMsg);
-                using (Stream stream = request.GetRequestStream())
-                {
-                    stream.Write(data, 0, data.Length);
-                }
-                request.KeepAlive = false;
-                HttpWebResponse response =
-                (HttpWebResponse)request.GetResponse();
-                Stream streamResponse = response.GetResponseStream();
-                StreamReader streamRead = new StreamReader(streamResponse);
-                string read = streamRead.ReadToEnd();
-                outputData = read;
-                streamResponse.Close();
-                streamRead.Close();
-                response.Close();
 
-            }
-            catch (WebException e)
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = "POST";
+            request.ContentType = "application/x-www-form-urlencoded";
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11;
+            ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+            System.Net.ServicePointManager.Expect100Continue = false;
+            byte[] data = Encoding.UTF8.GetBytes(reqMsg);
+            using (Stream stream = request.GetRequestStream())
             {
+                stream.Write(data, 0, data.Length);
             }
-            catch (Exception e)
-            {
-            }
+            request.KeepAlive = false;
+            HttpWebResponse response =
+            (HttpWebResponse)request.GetResponse();
+            Stream streamResponse = response.GetResponseStream();
+            StreamReader streamRead = new StreamReader(streamResponse);
+            string read = streamRead.ReadToEnd();
+            outputData = read;
+            streamResponse.Close();
+            streamRead.Close();
+            response.Close();
 
             return outputData;
         }
@@ -150,15 +146,9 @@ namespace Nop.Plugin.Payment.Paratika.Helpers
         public static string encodeParameter(string parameterValue)
         {
             string encodedValue = string.Empty;
-            try
+            if (parameterValue != null)
             {
-                if (parameterValue != null)
-                {
-                    encodedValue = HttpUtility.UrlEncode(parameterValue);
-                }
-            }
-            catch
-            {
+                encodedValue = HttpUtility.UrlEncode(parameterValue);
             }
             return encodedValue;
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,26 +21,21 @@ namespace Nop.Plugin.Payment.Paratika.Models
         public int ActiveStoreScopeConfiguration { get; set; }
 
         [NopResourceDisplayName("Plugins.Payments.Paratika.Fields.Username")]
-
+        [DataType(DataType.EmailAddress)]
         public string Username { get; set; }
         public bool Username_OverrideForStore { get; set; }
 
         [NopResourceDisplayName("Plugins.Payments.Paratika.Fields.Password")]
-
+        [DataType(DataType.Password)]
         public string Password { get; set; }
         public bool Password_OverrideForStore { get; set; }
-
-        [NopResourceDisplayName("Plugins.Payments.Paratika.Fields.Guid")]
-
-        public string Guid { get; set; }
-        public bool Guid_OverrideForStore { get; set; }
 
         [NopResourceDisplayName("Plugins.Payments.Paratika.Fields.Code")]
 
         public string Code { get; set; }
         public bool Code_OverrideForStore { get; set; }
 
-        [NopResourceDisplayName("Payment.IsActive")]
+        [NopResourceDisplayName("Plugins.Payments.Paratika.Fields.Payment.IsActive")]
 
         public bool IsActive { get; set; }
 
@@ -51,9 +47,24 @@ namespace Nop.Plugin.Payment.Paratika.Models
         public decimal AdditionalFee { get; set; }
         public bool AdditionalFee_OverrideForStore { get; set; }
 
-        [NopResourceDisplayName("Plugins.Payments.Paratika.Fields.Mail")]
+        [NopResourceDisplayName("Plugins.Payments.Paratika.Fields.URL")]
+        [DataType(DataType.Url)]
+        public string APIURL { get; set; }
+        public bool APIURL_OverrideForStore { get; set; }
 
-        public string URL { get; set; }
-        public bool URL_OverrideForStore { get; set; }
+        [NopResourceDisplayName("Plugins.Payments.Paratika.Fields.PaymentHPMethod")]
+        public bool PaymentHPMethod { get; set; }
+        public bool PaymentHPMethod_OverrideForStore { get; set; }
+
+        [NopResourceDisplayName("Plugins.Payments.Paratika.Fields.PaymentHPMethodURL")]
+        [DataType(DataType.Url)]
+        public string PaymentHPMethodURL { get; set; }
+        public bool PaymentHPMethodURL_OverrideForStore { get; set; }
+
+
+        [NopResourceDisplayName("Plugins.Payments.Paratika.Fields.MainURL")]
+        [DataType(DataType.Url)]
+        public string MainURL { get; set; }
+        public bool MainURL_OverrideForStore { get; set; }
     }
 }

@@ -980,6 +980,80 @@ namespace Nop.Web.Controllers
             return View(model);
         }
 
+        public virtual IActionResult ConfirmOrderParatika()
+        {
+            //validation
+            if (_orderSettings.CheckoutDisabled)
+                return RedirectToRoute("ShoppingCart");
+
+            var cart = _workContext.CurrentCustomer.ShoppingCartItems
+                .Where(sci => sci.ShoppingCartType == ShoppingCartType.ShoppingCart)
+                .LimitPerStore(_storeContext.CurrentStore.Id)
+                .ToList();
+            if (!cart.Any())
+                return RedirectToRoute("ShoppingCart");
+
+            if (_orderSettings.OnePageCheckoutEnabled)
+                return RedirectToRoute("CheckoutOnePage");
+
+            if (_workContext.CurrentCustomer.IsGuest() && !_orderSettings.AnonymousCheckoutAllowed)
+                return Challenge();
+
+            //model
+            var model = _checkoutModelFactory.PrepareConfirmOrderModel(cart);
+            try
+            {
+                var processPaymentRequest = HttpContext.Session.Get<ProcessPaymentRequest>("OrderPaymentInfo");
+                if (processPaymentRequest == null)
+                {
+                    //Check whether payment workflow is required
+                    if (_orderProcessingService.IsPaymentWorkflowRequired(cart))
+                        return RedirectToRoute("CheckoutPaymentInfo");
+
+                    processPaymentRequest = new ProcessPaymentRequest();
+                }
+
+                //prevent 2 orders being placed within an X seconds time frame
+                if (!IsMinimumOrderPlacementIntervalValid(_workContext.CurrentCustomer))
+                    throw new Exception(_localizationService.GetResource("Checkout.MinOrderPlacementInterval"));
+
+                //place order
+                processPaymentRequest.StoreId = _storeContext.CurrentStore.Id;
+                processPaymentRequest.CustomerId = _workContext.CurrentCustomer.Id;
+                processPaymentRequest.PaymentMethodSystemName = _genericAttributeService.GetAttribute<string>(_workContext.CurrentCustomer,
+                    NopCustomerDefaults.SelectedPaymentMethodAttribute, _storeContext.CurrentStore.Id);
+                var placeOrderResult = _orderProcessingService.PlaceOrder(processPaymentRequest);
+                if (placeOrderResult.Success)
+                {
+                    HttpContext.Session.Set<ProcessPaymentRequest>("OrderPaymentInfo", null);
+                    var postProcessPaymentRequest = new PostProcessPaymentRequest
+                    {
+                        Order = placeOrderResult.PlacedOrder
+                    };
+                    _paymentService.PostProcessPayment(postProcessPaymentRequest);
+
+                    if (_webHelper.IsRequestBeingRedirected || _webHelper.IsPostBeingDone)
+                    {
+                        //redirection or POST has been done in PostProcessPayment
+                        return Content("Redirected");
+                    }
+
+                    return RedirectToRoute("CheckoutCompleted", new { orderId = placeOrderResult.PlacedOrder.Id });
+                }
+
+                foreach (var error in placeOrderResult.Errors)
+                    model.Warnings.Add(error);
+            }
+            catch (Exception exc)
+            {
+                _logger.Warning(exc.Message, exc);
+                model.Warnings.Add(exc.Message);
+            }
+
+            //If we got this far, something failed, redisplay form
+            return View(model);
+        }
+
         #endregion
 
         #region Methods (one page checkout)

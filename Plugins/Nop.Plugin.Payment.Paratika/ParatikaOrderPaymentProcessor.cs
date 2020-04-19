@@ -189,26 +189,50 @@ namespace Nop.Plugin.Payment.Paratika
             //settings
             _settingService.SaveSetting(new ParatikaOrderPaymentSettings
             {
-                
+
             });
 
             //locales
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.PayPalStandard.Fields.AdditionalFee", "Additional fee");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.PayPalStandard.Fields.AdditionalFee.Hint", "Enter additional fee to charge your customers.");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.PayPalStandard.Fields.AdditionalFeePercentage", "Additional fee. Use percentage");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.PayPalStandard.Fields.AdditionalFeePercentage.Hint", "Determines whether to apply a percentage additional fee to the order total. If not enabled, a fixed value is used.");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.PayPalStandard.Fields.BusinessEmail", "Business Email");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.PayPalStandard.Fields.BusinessEmail.Hint", "Specify your PayPal business email.");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.PayPalStandard.Fields.PassProductNamesAndTotals", "Pass product names and order totals to PayPal");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.PayPalStandard.Fields.PassProductNamesAndTotals.Hint", "Check if product names and order totals should be passed to PayPal.");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.PayPalStandard.Fields.PDTToken", "PDT Identity Token");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.PayPalStandard.Fields.PDTToken.Hint", "Specify PDT identity token");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.PayPalStandard.Fields.RedirectionTip", "You will be redirected to PayPal site to complete the order.");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.PayPalStandard.Fields.UseSandbox", "Use Sandbox");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.PayPalStandard.Fields.UseSandbox.Hint", "Check to enable Sandbox (testing environment).");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.PayPalStandard.Instructions", "<p><b>If you're using this gateway ensure that your primary store currency is supported by PayPal.</b><br /><br />To use PDT, you must activate PDT and Auto Return in your PayPal account profile. You must also acquire a PDT identity token, which is used in all PDT communication you send to PayPal. Follow these steps to configure your account for PDT:<br /><br />1. Log in to your PayPal account (click <a href=\"https://www.paypal.com/us/webapps/mpp/referral/paypal-business-account2?partner_id=9JJPJNNPQ7PZ8\" target=\"_blank\">here</a> to create your account).<br />2. Click the Profile subtab.<br />3. Click Website Payment Preferences in the Seller Preferences column.<br />4. Under Auto Return for Website Payments, click the On radio button.<br />5. For the Return URL, enter the URL on your site that will receive the transaction ID posted by PayPal after a customer payment ({0}).<br />6. Under Payment Data Transfer, click the On radio button.<br />7. Click Save.<br />8. Click Website Payment Preferences in the Seller Preferences column.<br />9. Scroll down to the Payment Data Transfer section of the page to view your PDT identity token.<br /><br /></p>");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.PayPalStandard.PaymentMethodDescription", "You will be redirected to PayPal site to complete the payment");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.PayPalStandard.RoundingWarning", "It looks like you have \"ShoppingCartSettings.RoundPricesDuringCalculation\" setting disabled. Keep in mind that this can lead to a discrepancy of the order total amount, as PayPal only rounds to two decimals.");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.Error3", "Güvenli ödemeye bağlanılamadı. Tekrar edeneyiniz!", "tr-TR");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.Error2", "MerchantPaymentId hatası oluştu. Lütfen site yöneticisine durumu bildiriniz.", "tr-TR");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.Error", "Lütfen sayfayı yenileyerek tekrar deneyiniz!!", "tr-TR");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.Installment", "Taksit Seçiniz", "tr-TR");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.CardCode", "Güvenlik Kodu", "tr-TR");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.ExpirationYear", "Son Kul. Yıl", "tr-TR");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.ExpirationDate", "Son Kul. Ay", "tr-TR");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.CardNumber", "Kart Numarası", "tr-TR");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.CardholderName", "Kart Üzerindeki İsim Soyisim", "tr-TR");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.APIURL", "API URL", "tr-TR");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.AdditionalFee", "Ek Ücret Miktarı", "tr-TR");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.AdditionalFeePercentage", "Ek Ücret Ekle", "tr-TR");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.Payment.IsActive", "Aktif Mi", "tr-TR");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.Code", "Merchent No", "tr-TR");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.Password", "Merchent Şifre", "tr-TR");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.Username", "Merchent Adı", "tr-TR");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.PaymentHPMethod", "Ortak Ödeme Aktif mi", "tr-TR");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.PaymentHPMethodURL", "Ortak Ödeme URL", "tr-TR");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.MainURL", "Merkez URL", "tr-TR");
+
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.Error3", "Secure payment not connected. Try again!", "en-US");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.Error2", "MerchantPaymentId error accurred. Please website contact.", "en-US");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.Error", "Please refresh page and try again!", "en-US");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.Installment", "Installment Chosoe", "en-US");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.CardCode", "Security Code", "en-US");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.ExpirationYear", "Expiration Year", "en-US");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.ExpirationDate", "Expiration Date", "en-US");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.CardNumber", "Card Number", "en-US");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.CardholderName", "Cardholder Name", "en-US");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.APIURL", "API URL", "en-US");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.AdditionalFee", "Ekstra Pay", "en-US");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.AdditionalFeePercentage", "Ekstra Pay is Active", "en-US");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.Payment.IsActive", "Active", "en-US");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.Code", "Merchent No", "en-US");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.Password", "Merchent Password", "en-US");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.Username", "Merchent Username", "en-US");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.PaymentHPMethod", "HP Method Active", "en-US");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.PaymentHPMethodURL", "HP Method URL", "en-US");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.MainURL", "Main URL", "en-US");
+            
 
             base.Install();
         }
@@ -222,22 +246,26 @@ namespace Nop.Plugin.Payment.Paratika
             _settingService.DeleteSetting<ParatikaOrderPaymentSettings>();
 
             //locales
+            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.Error3");
+            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.Error2");
+            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.Error");
+            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.Installment");
+            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.CardCode");
+            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.ExpirationYear");
+            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.ExpirationDate");
+            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.CardNumber");
+            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.CardholderName");
+            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.APIURL");
             _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.AdditionalFee");
-            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.AdditionalFee.Hint");
             _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.AdditionalFeePercentage");
-            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.AdditionalFeePercentage.Hint");
-            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.BusinessEmail");
-            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.BusinessEmail.Hint");
-            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.PassProductNamesAndTotals");
-            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.PassProductNamesAndTotals.Hint");
-            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.PDTToken");
-            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.PDTToken.Hint");
-            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.RedirectionTip");
-            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.UseSandbox");
-            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.UseSandbox.Hint");
-            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Instructions");
-            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.PaymentMethodDescription");
-            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.RoundingWarning");
+            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.Payment.IsActive");
+            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.Code");
+            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.Password");
+            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.Username");
+            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.PaymentHPMethod");
+            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.PaymentHPMethodURL");
+            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.MainURL");
+            
 
             base.Uninstall();
         }

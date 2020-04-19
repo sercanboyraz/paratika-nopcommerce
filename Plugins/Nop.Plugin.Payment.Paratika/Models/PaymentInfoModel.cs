@@ -14,26 +14,28 @@ namespace Nop.Plugin.Payment.Paratika.Models
 {
     public class PaymentInfoModel : BaseNopModel
     {
-        [NopResourceDisplayName("Payment.CardholderName")]
+        [NopResourceDisplayName("Plugins.Payments.Paratika.Fields.CardholderName")]
         public string CardholderName { get; set; }
 
-        [NopResourceDisplayName("Payment.CardNumber")]
+        [NopResourceDisplayName("Plugins.Payments.Paratika.Fields.CardNumber")]
         public string CardNumber { get; set; }
 
-        [NopResourceDisplayName("Payment.ExpirationDate")]
+        [NopResourceDisplayName("Plugins.Payments.Paratika.Fields.ExpirationDate")]
         public string ExpireCardMounth { get; set; }
 
-        [NopResourceDisplayName("Payment.ExpirationYear")]
+        [NopResourceDisplayName("Plugins.Payments.Paratika.Fields.ExpirationYear")]
         public string ExpireCardYear { get; set; }
 
-        [NopResourceDisplayName("Payment.CardCode")]
+        [NopResourceDisplayName("Plugins.Payments.Paratika.Fields.CardCode")]
         public string CardCode { get; set; }
 
-        [NopResourceDisplayName("Plugins.Payments.Paratika.Fields.IsProcess3D")]
-        public bool IsProcess3D { get; set; }
         public string Error { get; set; }
 
-        [NopResourceDisplayName("Plugins.Payments.Paratika.Fields.Installments")]
+        public string MainUrl { get; set; }
+        
+        public string PaymentHPMethodURL { get; set; }
+        
+
         public string SessionToken { get; set; }
 
         [NopResourceDisplayName("Plugins.Payments.Paratika.Fields.Installment")]

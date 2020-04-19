@@ -37,6 +37,7 @@ namespace Nop.Web
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             return services.ConfigureApplicationServices(Configuration);
+
         }
 
         /// <summary>
