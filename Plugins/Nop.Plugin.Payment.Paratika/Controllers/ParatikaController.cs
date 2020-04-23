@@ -234,6 +234,7 @@ namespace Nop.Plugin.Payment.Paratika.Controllers
             //if prataka is not active, you get payment with HP Interface.
             if (_paratikaOrderPaymentSettings.PaymentHPMethod)
             {
+                //used main url set value only with hp method 
                 model.MainUrl = _paratikaOrderPaymentSettings.MainURL;
                 var orderGuid = _session.Get<string>("MERCHANTPAYMENTID_" + _workContext.CurrentCustomer.Id);
                 processPaymentRequest.OrderGuid = Guid.Parse(orderGuid);
@@ -256,14 +257,14 @@ namespace Nop.Plugin.Payment.Paratika.Controllers
         }
 
         [HttpGet]
+        [DisableCors]
         public IActionResult ParatikaPaymentInfo3D(PaymentInfoModel model)
         {
             Dictionary<String, String> requestParameters = new Dictionary<String, String>();
 
-
             requestParameters.Add("NAMEONCARD", model.CardholderName);
             requestParameters.Add("CARDPAN", model.CardNumber);
-            requestParameters.Add("CARDEXPIRY", model.ExpireCardMounth + "." + model.ExpireCardYear.Substring(2, 2).ToString());
+            requestParameters.Add("CARDEXPIRY", model.ExpireCardMounth + "." + model.ExpireCardYear.ToString());
             requestParameters.Add("CARDCVV", model.CardCode);
             requestParameters.Add("ACTION", "SALE");
             requestParameters.Add("INSTALLMENTS", model.Installment.ToString());
@@ -272,9 +273,7 @@ namespace Nop.Plugin.Payment.Paratika.Controllers
             requestParameters.Add("expiryMonth", model.ExpireCardMounth);
             requestParameters.Add("expiryYear", model.ExpireCardYear);
             requestParameters.Add("cvv", model.CardCode);
-            //requestParameters.Add("ACTION", "SALE");
             requestParameters.Add("installmentCount", model.Installment.ToString());
-
 
             if (_orderSettings.CheckoutDisabled)
                 return RedirectToRoute("ShoppingCart");
@@ -311,13 +310,9 @@ namespace Nop.Plugin.Payment.Paratika.Controllers
             requestParameters.Add("SESSIONTOKEN", getSessionToken.ToString());
             var requestData = HelperParatikaService.convertToRequestData(requestParameters);
             var response = HelperParatikaService.getConnection(_paratikaOrderPaymentSettings.URL + "post/sale3d/" + getSessionToken.ToString(), requestData);
-            
-            //cross-origin for added
-            model.MainUrl = _paratikaOrderPaymentSettings.MainURL;
 
             //redirect url - 3D Security
-            model.PaymentHPMethodURL = _paratikaOrderPaymentSettings.URL + "post/sale3d/" + getSessionToken.ToString();
-            return View("~/Plugins/Payments.Paratika/Views/PaymentInfo.cshtml", model);
+            return Json(new { url = _paratikaOrderPaymentSettings.URL + "post/sale3d/" + getSessionToken.ToString(), data = requestData });
         }
 
         public IActionResult PaymentInfoCallBack(IFormCollection form)
@@ -408,7 +403,7 @@ namespace Nop.Plugin.Payment.Paratika.Controllers
             }
 
             model.Error += responseMsg;
-            return View("PaymentInfo", model);
+            return RedirectToRoute("CheckoutPaymentMethod");
         }
 
         [HttpGet]

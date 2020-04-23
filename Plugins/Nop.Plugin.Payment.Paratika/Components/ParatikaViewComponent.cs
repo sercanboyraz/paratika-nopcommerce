@@ -74,6 +74,14 @@ namespace Nop.Plugin.Payment.Paratika.Components
                 model.ExpireCardMounth = form["ExpireCardMounth"];
                 model.ExpireCardYear = form["ExpireCardYear"];
             }
+            else
+            {
+                model.CardholderName = "";
+                model.CardNumber = "";
+                model.CardCode = "";
+                model.ExpireCardMounth = "";
+                model.ExpireCardYear = "";
+            }
             return ParatikaPaymentInfo(model);
         }
 

@@ -118,8 +118,7 @@ namespace Nop.Plugin.Payment.Paratika.Helpers
                 stream.Write(data, 0, data.Length);
             }
             request.KeepAlive = false;
-            HttpWebResponse response =
-            (HttpWebResponse)request.GetResponse();
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Stream streamResponse = response.GetResponseStream();
             StreamReader streamRead = new StreamReader(streamResponse);
             string read = streamRead.ReadToEnd();

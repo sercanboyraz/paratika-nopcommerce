@@ -46,6 +46,12 @@
 </ItemGroup>
   
   <ItemGroup>
+    <None Update="Scripts\datatables.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Scripts\datatables.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Scripts\imask.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -14,6 +14,11 @@ namespace Nop.Plugin.Payment.Paratika.Models
 {
     public class PaymentInfoModel : BaseNopModel
     {
+        public PaymentInfoModel()
+        {
+
+        }
+
         [NopResourceDisplayName("Plugins.Payments.Paratika.Fields.CardholderName")]
         public string CardholderName { get; set; }
 
@@ -35,7 +40,6 @@ namespace Nop.Plugin.Payment.Paratika.Models
         
         public string PaymentHPMethodURL { get; set; }
         
-
         public string SessionToken { get; set; }
 
         [NopResourceDisplayName("Plugins.Payments.Paratika.Fields.Installment")]

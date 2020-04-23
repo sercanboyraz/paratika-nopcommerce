@@ -1,5 +1,4 @@
 ﻿window.onload = function () {
-
     const name = document.getElementById('name');
     const cardnumber = document.getElementById('cardnumber');
     const expirationdate = document.getElementById('expirationdate');
@@ -343,14 +342,13 @@ function sendPayment() {
         var modelCardholderName = $('#name').val();
         var modelCardNumber = $('#cardnumber').val();
         var modelCardCode = $('#securitycode').val();
-        var modelExpireCardMounth= $('#expirationdate').val();
-        var modelExpireCardYear= $('#expirationdate2').val();
+        var modelExpireCardMounth = $('#expirationdate').val();
+        var modelExpireCardYear = $('#expirationdate2').val();
         if (modelCardholderName !== null && modelCardholderName !== "" &&
             modelCardNumber !== null && modelCardNumber !== "" &&
             modelCardCode !== null && modelCardCode !== "" &&
             modelExpireCardMounth !== null && modelExpireCardMounth !== "" &&
-            modelExpireCardYear !== null && modelExpireCardYear !== "")
-        {
+            modelExpireCardYear !== null && modelExpireCardYear !== "") {
             var model = {
                 CardholderName: $('#name').val(),
                 CardNumber: $('#cardnumber').val(),
@@ -358,14 +356,19 @@ function sendPayment() {
                 ExpireCardYear: $('#expirationdate2').val(),
                 CardCode: $('#securitycode').val(),
                 Installment: $('#installmentCount').val(),
-                SessionToken: $('#sessionTokenData').val(),
                 MainURL: $('#mainURLData').val(),
             };
-
+            //var tttt = "https://entegrasyon.paratika.com.tr/paratika/api/v2/post/sale3d/" + $('#sessionTokenData').val();
             $.ajax({
                 url: "../Paratika/ParatikaPaymentInfo3D",
                 data: model,
                 type: 'GET',
+                contentType: "application/x-www-form-urlencoded",
+                headers: {
+                    //with cross-origin
+                    'Access-Control-Allow-Credentials': 'true',
+                    'Access-Control-Allow-Origin': "https://entegrasyon.paratika.com.tr/",
+                },
                 error: function (response, status, jqxhr) {
                     var errormes = response.responseText;
                     if (status === "error") {
@@ -377,6 +380,31 @@ function sendPayment() {
                 },
                 success: function (data) {
                     $("#btnSave").hide();
+                    //window.location.href = data.PaymentHPMethodURL;
+                    $.ajax({
+                        url: data.url,
+                        data: data.data,
+                        type: 'POST',
+                        contentType: "application/x-www-form-urlencoded",
+                        headers: {
+                            //with cross-origin
+                            'Access-Control-Allow-Credentials': 'true',
+                            'Access-Control-Allow-Origin': "https://entegrasyon.paratika.com.tr/",
+                        },
+                        error: function (response, status, jqxhr) {
+                            var errormes = response.responseText;
+                            if (status === "error") {
+                                $(".message-error").text("Hata " + errormes);
+                            } else {
+                                $(".message-error").text(status + " " + errormes);
+                            }
+                            $("#btnSave").hide();
+                        },
+                        success: function (data) {
+                            $("#btnSave").hide();
+                            //window.location.href = data.PaymentHPMethodURL;
+                        }
+                    });
                 }
             });
         } else {
@@ -446,4 +474,3 @@ function paratikaInstallment() {
         });
     }
 }
-
