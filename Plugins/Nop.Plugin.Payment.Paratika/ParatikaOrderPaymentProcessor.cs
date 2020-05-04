@@ -232,7 +232,7 @@ namespace Nop.Plugin.Payment.Paratika
             _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.Username", "Merchent Username", "en-US");
             _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.PaymentHPMethod", "HP Method Active", "en-US");
             _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.PaymentHPMethodURL", "HP Method URL", "en-US");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.URL", "API URL", "tr-TR");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.URL", "API URL", "en-US");
 
 
             base.Install();
