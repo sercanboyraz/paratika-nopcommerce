@@ -211,6 +211,8 @@ namespace Nop.Plugin.Payment.Paratika
             _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.Username", "Merchent Adı", "tr-TR");
             _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.PaymentHPMethod", "Ortak Ödeme Aktif mi", "tr-TR");
             _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.PaymentHPMethodURL", "Ortak Ödeme URL", "tr-TR");
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.URL", "API URL", "tr-TR");
+            
 
             _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.Error3", "Secure payment not connected. Try again!", "en-US");
             _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.Error2", "MerchantPaymentId error accurred. Please website contact.", "en-US");
@@ -230,7 +232,8 @@ namespace Nop.Plugin.Payment.Paratika
             _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.Username", "Merchent Username", "en-US");
             _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.PaymentHPMethod", "HP Method Active", "en-US");
             _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.PaymentHPMethodURL", "HP Method URL", "en-US");
-            
+            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Payments.Paratika.Fields.URL", "API URL", "tr-TR");
+
 
             base.Install();
         }
@@ -263,7 +266,8 @@ namespace Nop.Plugin.Payment.Paratika
             _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.PaymentHPMethod");
             _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.PaymentHPMethodURL");
             _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.MainURL");
-            
+            _localizationService.DeletePluginLocaleResource("Plugins.Payments.Paratika.Fields.URL");
+
 
             base.Uninstall();
         }
