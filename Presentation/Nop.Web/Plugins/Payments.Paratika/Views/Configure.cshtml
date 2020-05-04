@@ -73,21 +73,6 @@
 
                 <div class="form-group">
                     <div class="col-md-3">
-                        <nop-override-store-checkbox asp-for="MainURL_OverrideForStore" asp-input="MainURL" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
-                        <nop-label asp-for="MainURL" />
-                    </div>
-                    <div class="col-md-9">
-                        <nop-editor asp-for="MainURL" />
-                        @if (string.IsNullOrWhiteSpace(Model.MainURL))
-                        {
-                            <nop-required />
-                        }
-                        <span asp-validation-for="MainURL"></span>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-md-3">
                         <nop-override-store-checkbox asp-for="PaymentHPMethod_OverrideForStore" asp-input="PaymentHPMethod" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
                         <nop-label asp-for="PaymentHPMethod" />
                     </div>

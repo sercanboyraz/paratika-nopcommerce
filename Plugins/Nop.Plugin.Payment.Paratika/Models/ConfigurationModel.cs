@@ -61,10 +61,5 @@ namespace Nop.Plugin.Payment.Paratika.Models
         public string PaymentHPMethodURL { get; set; }
         public bool PaymentHPMethodURL_OverrideForStore { get; set; }
 
-
-        [NopResourceDisplayName("Plugins.Payments.Paratika.Fields.MainURL")]
-        [DataType(DataType.Url)]
-        public string MainURL { get; set; }
-        public bool MainURL_OverrideForStore { get; set; }
     }
 }

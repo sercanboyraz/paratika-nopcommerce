@@ -104,6 +104,12 @@ namespace Nop.Plugin.Payment.Paratika.Components
                 return View("~/Plugins/Payments.Paratika/Views/PaymentInfo.cshtml", model);
             }
 
+            if (_paratikaOrderPaymentSettings.PaymentHPMethod)
+            {
+                //used main url set value only with hp method 
+                model.PaymentHPMethodURL = _paratikaOrderPaymentSettings.PaymentHPMethodURL;
+            }
+
             HelperParatikaService.ParatikaParameter(requestParameters, cart, _workContext, _httpContextAccessor, _webHelper, _paratikaOrderPaymentSettings, _orderTotalCalculationService);
             var requestData = HelperParatikaService.convertToRequestData(requestParameters);
             var response = HelperParatikaService.getConnection(_paratikaOrderPaymentSettings.URL, requestData);

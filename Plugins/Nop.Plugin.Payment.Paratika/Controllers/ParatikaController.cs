@@ -133,7 +133,6 @@ namespace Nop.Plugin.Payment.Paratika.Controllers
             model.APIURL = orderPaymentSettings.URL;
             model.PaymentHPMethod = orderPaymentSettings.PaymentHPMethod;
             model.PaymentHPMethodURL = orderPaymentSettings.PaymentHPMethodURL;
-            model.MainURL = orderPaymentSettings.MainURL;
 
             model.ActiveStoreScopeConfiguration = storeScope;
             if (storeScope > 0)
@@ -144,7 +143,6 @@ namespace Nop.Plugin.Payment.Paratika.Controllers
                 model.APIURL_OverrideForStore = _settingService.SettingExists(orderPaymentSettings, x => x.URL, storeScope);
                 model.PaymentHPMethod_OverrideForStore = _settingService.SettingExists(orderPaymentSettings, x => x.PaymentHPMethod, storeScope);
                 model.PaymentHPMethodURL_OverrideForStore = _settingService.SettingExists(orderPaymentSettings, x => x.PaymentHPMethodURL, storeScope);
-                model.MainURL_OverrideForStore = _settingService.SettingExists(orderPaymentSettings, x => x.MainURL, storeScope);
                 model.AdditionalFee_OverrideForStore = _settingService.SettingExists(orderPaymentSettings, x => x.AdditionalFee, storeScope);
                 model.AdditionalFeePercentage_OverrideForStore = _settingService.SettingExists(orderPaymentSettings, x => x.AdditionalFeePercentage, storeScope);
             }
@@ -174,13 +172,11 @@ namespace Nop.Plugin.Payment.Paratika.Controllers
             paratikaSettings.URL = model.APIURL;
             paratikaSettings.PaymentHPMethod = model.PaymentHPMethod;
             paratikaSettings.PaymentHPMethodURL = model.PaymentHPMethodURL;
-            paratikaSettings.MainURL = model.MainURL;
 
             _settingService.SaveSettingOverridablePerStore(paratikaSettings, x => x.Password, model.Password_OverrideForStore, storeScope, false);
             _settingService.SaveSettingOverridablePerStore(paratikaSettings, x => x.Code, model.Code_OverrideForStore, storeScope, false);
             _settingService.SaveSettingOverridablePerStore(paratikaSettings, x => x.PaymentHPMethod, model.PaymentHPMethod_OverrideForStore, storeScope, false);
             _settingService.SaveSettingOverridablePerStore(paratikaSettings, x => x.PaymentHPMethodURL, model.PaymentHPMethodURL_OverrideForStore, storeScope, false);
-            _settingService.SaveSettingOverridablePerStore(paratikaSettings, x => x.MainURL, model.MainURL_OverrideForStore, storeScope, false);
             _settingService.SaveSettingOverridablePerStore(paratikaSettings, x => x.Username, model.Username_OverrideForStore, storeScope, false);
             _settingService.SaveSettingOverridablePerStore(paratikaSettings, x => x.URL, model.APIURL_OverrideForStore, storeScope, false);
             _settingService.SaveSettingOverridablePerStore(paratikaSettings, x => x.AdditionalFee, model.AdditionalFee_OverrideForStore, storeScope, false);
@@ -235,7 +231,6 @@ namespace Nop.Plugin.Payment.Paratika.Controllers
             if (_paratikaOrderPaymentSettings.PaymentHPMethod)
             {
                 //used main url set value only with hp method 
-                model.MainUrl = _paratikaOrderPaymentSettings.MainURL;
                 var orderGuid = _session.Get<string>("MERCHANTPAYMENTID_" + _workContext.CurrentCustomer.Id);
                 processPaymentRequest.OrderGuid = Guid.Parse(orderGuid);
                 HttpContext.Session.Set<ProcessPaymentRequest>("OrderPaymentInfo", processPaymentRequest);
@@ -309,7 +304,7 @@ namespace Nop.Plugin.Payment.Paratika.Controllers
             var getSessionToken = _session.Get<string>("SESSIONTOKEN_" + _workContext.CurrentCustomer.Id);
             requestParameters.Add("SESSIONTOKEN", getSessionToken.ToString());
             var requestData = HelperParatikaService.convertToRequestData(requestParameters);
-            var response = HelperParatikaService.getConnection(_paratikaOrderPaymentSettings.URL + "post/sale3d/" + getSessionToken.ToString(), requestData);
+            //var response = HelperParatikaService.getConnection(_paratikaOrderPaymentSettings.URL + "post/sale3d/" + getSessionToken.ToString(), requestData);
 
             //redirect url - 3D Security
             return Json(new { url = _paratikaOrderPaymentSettings.URL + "post/sale3d/" + getSessionToken.ToString(), data = requestData });

@@ -11,6 +11,7 @@ namespace Nop.Web
     /// </summary>
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         #region Properties
 
         /// <summary>
@@ -36,6 +37,14 @@ namespace Nop.Web
         /// <param name="services">Collection of service descriptors</param>
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy(name: MyAllowSpecificOrigins,
+            //                      builder =>
+            //                      {
+            //                          builder.WithOrigins("https://entegrasyon.paratika.com.tr/", "https://entegrasyon.paratika.com.tr/paratika/api/v2/", "https://entegrasyon.paratika.com.tr/payment/");
+            //                      });
+            //});
             return services.ConfigureApplicationServices(Configuration);
 
         }
@@ -47,6 +56,7 @@ namespace Nop.Web
         public void Configure(IApplicationBuilder application)
         {
             application.ConfigureRequestPipeline();
+            //application.UseCors(MyAllowSpecificOrigins);
         }
     }
 }

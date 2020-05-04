@@ -45,10 +45,6 @@ namespace Nop.Plugin.Payment.Paratika
         /// Paratika Hosted Page integrate URL sample:https://entegrasyon.paratika.com.tr/payment/
         /// </summary>
         public string PaymentHPMethodURL { get; set; }
-        /// <summary>
-        /// Paratika redirect URL sample:https://entegrasyon.paratika.com.tr/
-        /// </summary>
-        public string MainURL { get; set; }
 
     }
 }

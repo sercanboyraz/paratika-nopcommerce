@@ -36,8 +36,6 @@ namespace Nop.Plugin.Payment.Paratika.Models
 
         public string Error { get; set; }
 
-        public string MainUrl { get; set; }
-        
         public string PaymentHPMethodURL { get; set; }
         
         public string SessionToken { get; set; }
