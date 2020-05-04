@@ -34,4 +34,4 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Logo of the project](https://raw.githubusercontent.com/sercanboyraz/paratika-nopcommerce/master/Presentation/Nop.Web/wwwroot/images/nopparatika.png)
+![Logo of the project](https://raw.githubusercontent.com/sercanboyraz/paratika-nopcommerce/master/Presentation/Nop.Web/wwwroot/images/nopparatika1.png)
